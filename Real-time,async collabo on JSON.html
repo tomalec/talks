@@ -690,80 +690,6 @@ myQueue.receive(myObject, reveivedVersionedPatch);</code></pre></div></div>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 505px; top: 641px;" data-block-id="857f85c677b6189d56c02cc9681d8075"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;" data-fragment-index="0">
 <p>B</p>
-</div></div></section><section data-id="cdfc51791bbedea52a7c716fd1653659">
-
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: -1px; top: 101px;" data-block-id="bf0a282673fe455593975478061b892a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
-<p>Track 1 - Alice</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 479px; top: 101px;" data-block-id="43914f34ac1d92a7888d55c596c32341"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(230, 145, 56);">
-<p>Track 2 - Bob</p>
-</div></div>
-<div class="sl-block" data-block-type="code" style="width: 480px; height: 416px; left: 0px; top: 140px;" data-block-id="6718cc56c4b7bb57a53804a1329f51dd"><div class="sl-block-content" style="z-index: 11; border-style: solid; border-width: 1px;"><pre><code>{
-    "version": 2,
-    "title": "WebCamp Zagreb 2015",
-    "talks": [
-        {
-            "title": "Fast and fpsious",
-            "started": true,
-            "done": true
-        },
-        {
-            "title": "Real-time JSON collabo",
-            "started": true,
-            "done": false
-        },
-        {
-            "title": "Lightning Talks",
-            "started": false,
-            "done": false
-        }
-    ]
-}</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 480px; height: 416px; left: 485px; top: 140px;" data-block-id="85c821b5787a561d3f511f6e6af2e78f"><div class="sl-block-content" style="z-index: 15; border: 1px solid rgb(230, 145, 56);"><pre><code>{
-    "version": 2,
-    "title": "WebCamp Zagreb 2015",
-    "talks": [
-        {
-            "title": "Real-time JSON collabo",
-            "started": false,
-            "done": false
-        },
-        {
-            "title": "Lightning Talks",
-            "started": false,
-            "done": false
-        }
-    ]
-}</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: -150px; top: 20px;" data-block-id="1ac1eb171afaf499e3bbe7f0159c64c2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; font-size: 98%;">
-<p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
-</div></div>
-
-
-
-
-<div class="sl-block" data-block-type="code" style="width: 562px; height: 79px; left: -121px; top: 0px;" data-block-id="0b353cc282d4c9a144aa22bfdb8386d5"><div class="sl-block-content" style="z-index: 10; border-style: solid; border-width: 1px;"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
-{"op": "replace", "path": "/version", "value": 2},
-{"op": "replace", "path": "/talks/1/started", "value": true}</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 561px; height: 79px; left: 520px; top: 0px;" data-block-id="efdf8a3d9aa5ada00e2c37f613471f7d"><div class="sl-block-content" style="z-index: 18; border: 1px solid rgb(230, 145, 56);"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
-{"op": "replace", "path": "/version", "value": 2},
-{"op": "remove", "path": "/talks/0"}</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 441px; top: 20px;" data-block-id="45963f944e75c9e2186d28d0a0cfea8d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19;">
-<p>A</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 490px; top: 20px;" data-block-id="c1f244b4d4d8f7f2bb77457b7fcd0298"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;">
-<p>B</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 1081px; top: 22px;" data-block-id="e4fbb52afc126cf821b59ac31765f71b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; font-size: 98%;">
-<p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
-</div></div>
-<div class="sl-block" data-block-type="shape" style="width: 240px; height: 138px; left: 303px; top: 556px;" data-block-id="c8fc383fc7157da71a936afb9da6711a"><div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-down-left" data-shape-fill-color="rgb(246, 178, 107)" data-shape-stretch="false" style="z-index: 16;" data-fragment-index="0" href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="xMidYMid" viewbox="4 4 24 24"><g class="shape-element" fill="rgb(246, 178, 107)"><path d="M18 28c1.105 0 2-0.895 2-2s-0.895-2-2-2h-7.172l16.586-16.586c0.781-0.781 0.781-2.047 0-2.828-0.391-0.391-0.902-0.586-1.414-0.586s-1.024 0.195-1.414 0.586l-16.586 16.586v-7.172c0-1.105-0.895-2-2-2s-2 0.895-2 2v14h14z"></path></g></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="width: 240px; height: 138px; left: 418px; top: 556px;" data-block-id="a95ec7e0174e992e20e25617880567cf"><div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-down-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="false" style="z-index: 14;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="xMidYMid" viewbox="4 4 24 24"><g class="shape-element" fill="rgb(255, 255, 255)"><path d="M28 14c0-1.105-0.895-2-2-2s-2 0.895-2 2v7.172l-16.586-16.586c-0.781-0.781-2.047-0.781-2.828 0-0.391 0.391-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414l16.586 16.586h-7.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h14v-14z"></path></g></svg></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 607px; top: 694px;" data-block-id="738420af4445651ff90340afea1725b2"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 22;" data-fragment-index="0">
-<p>A</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 324px; top: 694px;" data-block-id="f2618192028d748898ecdbf1e3cc19cd"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 24;" data-fragment-index="0">
-<p>B</p>
 </div></div></section><section data-id="a5d1ad3b0669747bc4a8286edebb1345">
 
 
@@ -776,53 +702,99 @@ myQueue.receive(myObject, reveivedVersionedPatch);</code></pre></div></div>
 
 
 
-<div class="sl-block" data-block-type="text" data-block-id="cf30074f09b3f6fba2408f513661990c" style="height: auto; min-width: 30px; min-height: 30px; width: 530px; left: -98px; top: 599px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(211, 47, 47);" data-fragment-index="0">
+<div class="sl-block" data-block-type="text" data-block-id="cf30074f09b3f6fba2408f513661990c" style="height: auto; min-width: 30px; min-height: 30px; width: 530px; left: -98px; top: 599px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; color: rgb(211, 47, 47);" data-fragment-index="2">
 <p>Version does not match</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 530px; left: 513px; top: 601px;" data-block-id="b8f701a5956870bba43f6eb8cae64e92"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(211, 47, 47);" data-fragment-index="0">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 530px; left: 513px; top: 601px;" data-block-id="b8f701a5956870bba43f6eb8cae64e92"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 23; color: rgb(211, 47, 47);" data-fragment-index="2">
 <p>Lightnings didn't started!</p>
 </div></div>
-<div class="sl-block" data-block-type="text" data-block-id="a0ded8b3e346802ae7f8b03dae08d3ec" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 634px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;" data-fragment-index="1">
-<p>Should we ingore or block such behavior?<br>
-Or wait for something?</p>
+<div class="sl-block" data-block-type="text" data-block-id="a0ded8b3e346802ae7f8b03dae08d3ec" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 640px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 24;" data-fragment-index="3">
+<p><span style="color:rgb(255, 255, 255)">Should we wait for something?</span></p>
+
+<p>Or ingore or block such behavior?</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: -1px; top: 48px;" data-block-id="a02c01bb4574e05ecc60d09b7fb7d8ee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: -1px; top: 48px;" data-block-id="a02c01bb4574e05ecc60d09b7fb7d8ee"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;">
 <p>Track 1 - Alice</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 479px; top: 48px;" data-block-id="2c31d6cf88f21c1b7864f37fa1faba49"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(230, 145, 56);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 479px; top: 48px;" data-block-id="2c31d6cf88f21c1b7864f37fa1faba49"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; color: rgb(230, 145, 56);">
 <p>Track 2 - Bob</p>
 </div></div>
 
 
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: -150px; top: -23px;" data-block-id="1270f74809f9e74b5704dc76e2affd01"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; font-size: 98%;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: -150px; top: -23px;" data-block-id="1270f74809f9e74b5704dc76e2affd01"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; font-size: 98%;" data-fragment-index="0">
 <p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 562px; height: 79px; left: -121px; top: -43px;" data-block-id="7e5984f2d77922b1f4d39aef3bb6134e"><div class="sl-block-content" style="z-index: 10; border-style: solid; border-width: 1px;"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
+<div class="sl-block" data-block-type="code" style="width: 562px; height: 79px; left: -121px; top: -43px;" data-block-id="7e5984f2d77922b1f4d39aef3bb6134e"><div class="sl-block-content fragment" style="z-index: 17; border-style: solid; border-width: 1px;" data-fragment-index="0"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
 {"op": "replace", "path": "/version", "value": 2},
 {"op": "replace", "path": "/talks/1/started", "value": true}</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 561px; height: 79px; left: 520px; top: -43px;" data-block-id="1ca308d9e1e4d0f3d107b8954f9a1117"><div class="sl-block-content" style="z-index: 16; border: 1px solid rgb(230, 145, 56);"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
+<div class="sl-block" data-block-type="code" style="width: 561px; height: 79px; left: 520px; top: -43px;" data-block-id="1ca308d9e1e4d0f3d107b8954f9a1117"><div class="sl-block-content fragment" style="z-index: 22; border: 1px solid rgb(230, 145, 56);" data-fragment-index="0"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
 {"op": "replace", "path": "/version", "value": 2},
 {"op": "remove", "path": "/talks/0"}</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 441px; top: -23px;" data-block-id="450be5e9cb846c68ea0eccd968baa9b9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 441px; top: -23px;" data-block-id="450be5e9cb846c68ea0eccd968baa9b9"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 25;" data-fragment-index="0">
 <p>A</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 490px; top: -23px;" data-block-id="211b42435f155834202287d29cffced8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 490px; top: -23px;" data-block-id="211b42435f155834202287d29cffced8"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 26;" data-fragment-index="0">
 <p>B</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 562px; height: 79px; left: 519px; top: 520px;" data-block-id="e921c26f27a107fb1c05bf20aae0f5e4"><div class="sl-block-content" style="z-index: 21; border-style: solid; border-width: 1px;"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
+<div class="sl-block" data-block-type="code" style="width: 562px; height: 79px; left: 560px; top: 520px;" data-block-id="e921c26f27a107fb1c05bf20aae0f5e4"><div class="sl-block-content fragment" style="z-index: 27; border-style: solid; border-width: 1px;" data-fragment-index="1"><pre><code>{"op": "test", "path": "/version", "value": 1},
 {"op": "replace", "path": "/version", "value": 2},
 {"op": "replace", "path": "/talks/1/started", "value": true}</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 561px; height: 79px; left: -121px; top: 520px;" data-block-id="f8d3023c55ac9ee8b7bfc48c9b41bc1d"><div class="sl-block-content" style="z-index: 22; border: 1px solid rgb(230, 145, 56);"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
+<div class="sl-block" data-block-type="code" style="width: 561px; height: 79px; left: -161px; top: 520px;" data-block-id="f8d3023c55ac9ee8b7bfc48c9b41bc1d"><div class="sl-block-content fragment" style="z-index: 28; border: 1px solid rgb(230, 145, 56);" data-fragment-index="1"><pre class="json"><code>{"op": "test", "path": "/version", "value": 1},
 {"op": "replace", "path": "/version", "value": 2},
 {"op": "remove", "path": "/talks/0"}</code></pre></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 832px; top: 566px;" data-block-id="80786aff43753d8fdabf95650d93e731"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 23; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 279px; top: 526px;" data-block-id="6b91bf29ea6b650b15f0f62f3c811418"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 24; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 140px; top: 87px;" data-block-id="01d42deeb83a04a1c3d9e641644d424c"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 25; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 622px; top: 87px;" data-block-id="8cb3ae7c7e3c9be261d8bfd97d698758"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 26; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 919px; top: 525px;" data-block-id="8c9f6f304bc1b989aa6cb59277b37961"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 27; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" data-block-id="6392472e81669543c71d4130469e9d5a" style="min-width: 4px; min-height: 4px; width: 28px; height: 23px; left: 531px; top: 247px;"><div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-right" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="false" style="z-index: 28; opacity: 0.65;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="xMidYMid" viewbox="2 4 28 24"><g class="shape-element" fill="rgb(211, 47, 47)"><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></g></svg></div></div>
-<div class="sl-block" data-block-type="code" style="width: 399px; height: 412px; left: 41px; top: 87px;" data-block-id="f948438825bb3d4744746faef60ee879"><div class="sl-block-content" style="z-index: 29; border-style: solid; border-width: 1px; font-size: 90%;"><pre><code>{
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 871px; top: 566px;" data-block-id="80786aff43753d8fdabf95650d93e731"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 29; opacity: 0.4;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 21"><rect width="19" height="21" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 240px; top: 526px;" data-block-id="6b91bf29ea6b650b15f0f62f3c811418"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 30; opacity: 0.4;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 21"><rect width="19" height="21" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 167px; top: 110px;" data-block-id="01d42deeb83a04a1c3d9e641644d424c"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 31; opacity: 0.4;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 21"><rect width="19" height="21" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 640px; top: 109px;" data-block-id="8cb3ae7c7e3c9be261d8bfd97d698758"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 32; opacity: 0.4;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 21"><rect width="19" height="21" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 961px; top: 525px;" data-block-id="8c9f6f304bc1b989aa6cb59277b37961"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="true" style="z-index: 33; opacity: 0.4;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 17 21"><rect width="17" height="21" class="shape-element" fill="rgb(211, 47, 47)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="6392472e81669543c71d4130469e9d5a" style="min-width: 4px; min-height: 4px; width: 28px; height: 23px; left: 557px; top: 248px;"><div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-right" data-shape-fill-color="rgb(211, 47, 47)" data-shape-stretch="false" style="z-index: 34; opacity: 0.65;" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="xMidYMid" viewbox="2 4 28 24"><g class="shape-element" fill="rgb(211, 47, 47)"><path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path></g></svg></div></div>
+<div class="sl-block" data-block-type="code" style="width: 399px; height: 412px; left: 41px; top: 87px;" data-block-id="f948438825bb3d4744746faef60ee879"><div class="sl-block-content" style="z-index: 13; border-style: solid; border-width: 1px; font-size: 90%;"><pre><code>{
     "version": 1,
+    "title": "WebCamp Zagreb 2015",
+    "talks": [
+        {
+            "title": "Fast and fpsious",
+            "started": true,
+            "done": true
+        },
+        {
+            "title": "Real-time JSON collabo",
+            "started": false,
+            "done": false
+        },
+        {
+            "title": "Lightning Talks",
+            "started": false,
+            "done": false
+        }
+    ]
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="width: 402px; height: 412px; left: 519px; top: 87px;" data-block-id="a049e0de070ea22c7738ef4231471b8b"><div class="sl-block-content" style="z-index: 15; border: 1px solid rgb(230, 145, 56); font-size: 90%;"><pre><code>{
+    "version": 1,
+    "title": "WebCamp Zagreb 2015",
+    "talks": [
+        {
+            "title": "Fast and fpsious",
+            "started": true,
+            "done": true
+        },
+        {
+            "title": "Real-time JSON collabo",
+            "started": false,
+            "done": false
+        },
+        {
+            "title": "Lightning Talks",
+            "started": false,
+            "done": false
+        }
+    ]
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 1081px; top: -19px;" data-block-id="04ddb209c884f4490a81a266f61fa676"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 35; font-size: 98%;" data-fragment-index="0">
+<p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 399px; height: 412px; left: 40px; top: 87px;" data-block-id="c4fb2cc7104b5b08507601ae33b7d0ff"><div class="sl-block-content fragment" style="z-index: 14; border-style: solid; border-width: 1px; font-size: 90%;" data-fragment-index="0"><pre><code>{
+    "version": 2,
     "title": "WebCamp Zagreb 2015",
     "talks": [
         {
@@ -842,7 +814,7 @@ Or wait for something?</p>
         }
     ]
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 402px; height: 412px; left: 519px; top: 87px;" data-block-id="a049e0de070ea22c7738ef4231471b8b"><div class="sl-block-content" style="z-index: 30; border: 1px solid rgb(230, 145, 56); font-size: 90%;"><pre><code>{
+<div class="sl-block" data-block-type="code" style="width: 402px; height: 412px; left: 518px; top: 87px;" data-block-id="4785449d471b71dfd6ee6904b4b9fa99"><div class="sl-block-content fragment" style="z-index: 16; border: 1px solid rgb(230, 145, 56); font-size: 90%;" data-fragment-index="0"><pre><code>{
     "version": 2,
     "title": "WebCamp Zagreb 2015",
     "talks": [
@@ -858,9 +830,16 @@ Or wait for something?</p>
         }
     ]
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 1081px; top: -19px;" data-block-id="04ddb209c884f4490a81a266f61fa676"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 31; font-size: 98%;">
-<p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
-</div></div></section><section data-id="1475140d888a748501aedf53b48bdd9d">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 400px; top: 539px;" data-block-id="3413f775643efd62cd1bc45a68d442e2"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 36;" data-fragment-index="1">
+<p>B</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 531px; top: 539px;" data-block-id="4fa9fbae09ffcadaa2636341d04a6fdd"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 37;" data-fragment-index="1">
+<p>A</p>
+</div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 400px; height: 20px; left: 40px; top: 284px;" data-block-id="08704b0d9b38cbc146ae71a9e123f717"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 0; opacity: 0.1;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 400 20"><rect width="400" height="20" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 398px; height: 20px; left: 41px; top: 109px;" data-block-id="708d3c462db1cc30703b24454eb4fc68"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 10; opacity: 0.1;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 397 20"><rect width="397" height="20" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 403px; height: 20px; left: 519px; top: 109px;" data-block-id="ffcf9fb858d24ba1a299f85300b55339"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 11; opacity: 0.1;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 404 20"><rect width="404" height="20" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 399px; height: 11px; left: 520px; top: 158px;" data-block-id="7d9096d64c9cb1344aa46364b4db5974"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 12; opacity: 0.1;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 399 11"><rect width="399" height="11" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div></section><section data-id="1475140d888a748501aedf53b48bdd9d">
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 247px;" data-block-id="3f703bc9adbac3235e843c66dbf1f552"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <p>Hey! It's 2015! server push, distributed operations, WebSockets.<br>
 <strong>Collaboration</strong>, we've said!</p>
@@ -929,8 +908,8 @@ Or wait for something?</p>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 562px; left: -136px; top: 575px;" data-block-id="d464f71bbd5d3633e210a273ec77cb54"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; font-size: 60%; text-align: center;">
 <p>Here is first Alice change, based on Bob's initial version </p>
 </div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 556px; height: 43px; left: 203px; top: 135px;" data-block-id="7c54b9dfad9751190d06facafe3ec564"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 18; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 556 43"><rect width="556" height="43" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 562px; height: 64px; left: -136px; top: 605px;" data-block-id="05f7d6e5b9e916e5ca74ea38c0b4bfaf"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 19; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 562 64"><rect width="562" height="64" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 556px; height: 43px; left: 203px; top: 135px;" data-block-id="7c54b9dfad9751190d06facafe3ec564"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 18; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 556 44"><rect width="556" height="44" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 562px; height: 64px; left: -136px; top: 605px;" data-block-id="05f7d6e5b9e916e5ca74ea38c0b4bfaf"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 19; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 563 64"><rect width="563" height="64" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
 <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 561px; height: 64px; left: 535px; top: 605px;" data-block-id="c68308e4554561f81d5ef4776961f40d"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 20; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 561 64"><rect width="561" height="64" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 0px;" data-block-id="6cf0fae958cf892c844956ac2fa89614"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h2>Multiple Versioned JSON PATCH</h2>
@@ -940,106 +919,16 @@ Or wait for something?</p>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 505px; top: 633px;" data-block-id="231387da023088ef6953f4c8d2eccb83"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 23;">
 <p>B</p>
-</div></div></section><section data-id="62a32008460559194d6816b029cd0158">
-
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 0px; top: 102px;" data-block-id="e60ea2b498fff17577bd4372e43d4ac1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
-<p>Track 1 - Alice</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 480px; top: 102px;" data-block-id="1f7fc6b7bbb02d0659efafd61629bdf1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(230, 145, 56);">
-<p>Track 2 - Bob</p>
-</div></div>
-<div class="sl-block" data-block-type="code" style="width: 399px; height: 412px; left: 42px; top: 141px;" data-block-id="cdc61aebde053a7442e3a1c6991048d6"><div class="sl-block-content" style="z-index: 10; border-style: solid; border-width: 1px; font-size: 90%;"><pre><code>{
-    "alice_version": 1,
-    "bob_version": 0,
-    "title": "WebCamp Zagreb 2015",
-    "talks": [
-        {
-            "title": "Fast and fpsious",
-            "started": true,
-            "done": true
-        },
-        {
-            "title": "Real-time JSON collabo",
-            "started": true,
-            "done": false
-        },
-        {
-            "title": "Lightning Talks",
-            "started": false,
-            "done": false
-        }
-    ]
-}</code></pre></div></div>
-
-
-
-<div class="sl-block" data-block-type="shape" style="width: 240px; height: 138px; left: 303px; top: 553px;" data-block-id="f4aabc894b305f67d561d51415c1eece"><div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-down-left" data-shape-fill-color="rgb(246, 178, 107)" data-shape-stretch="false" style="z-index: 15;" data-fragment-index="0" href=""><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="xMidYMid" viewbox="4 4 24 24"><g class="shape-element" fill="rgb(246, 178, 107)"><path d="M18 28c1.105 0 2-0.895 2-2s-0.895-2-2-2h-7.172l16.586-16.586c0.781-0.781 0.781-2.047 0-2.828-0.391-0.391-0.902-0.586-1.414-0.586s-1.024 0.195-1.414 0.586l-16.586 16.586v-7.172c0-1.105-0.895-2-2-2s-2 0.895-2 2v14h14z"></path></g></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="width: 240px; height: 138px; left: 418px; top: 553px;" data-block-id="473d861af7d1cf3f2fb54332c91cacc7"><div class="sl-block-content fragment" data-shape-type="symbol-thin-arrow-down-right" data-shape-fill-color="rgb(255, 255, 255)" data-shape-stretch="false" style="z-index: 13;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="xMidYMid" viewbox="4 4 24 24"><g class="shape-element" fill="rgb(255, 255, 255)"><path d="M28 14c0-1.105-0.895-2-2-2s-2 0.895-2 2v7.172l-16.586-16.586c-0.781-0.781-2.047-0.781-2.828 0-0.391 0.391-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414l16.586 16.586h-7.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h14v-14z"></path></g></svg></div></div>
-
-
-<div class="sl-block" data-block-type="text" data-block-id="99289e32627319078474bc273ab9444a" style="height: auto; min-width: 30px; min-height: 30px; width: 30px; left: -631px; top: 305px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
-<p>A</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 30px; left: 1523px; top: 305px;" data-block-id="72be845c510dab19d849b61761f603df"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16;">
-<p>B</p>
-</div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 215px; top: 165px;" data-block-id="0110465276d9a71c89d8bdbde382f1ce"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 17; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
-
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 59px; height: 20px; left: 224px; top: 274px;" data-block-id="d002df5f8d7c4842a5bd3c8077500cd9"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 18; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 59 20"><rect width="59" height="20" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 402px; height: 7px; left: 519px; top: 230px;" data-block-id="4762b743bb905e2bb2fe8a3adc443c76"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 21; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 402 7"><rect width="402" height="7" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="code" style="width: 402px; height: 412px; left: 519px; top: 141px;" data-block-id="c334247e6cfbb87d1a75b1039e022598"><div class="sl-block-content" style="z-index: 19; border: 1px solid rgb(230, 145, 56); font-size: 90%;"><pre><code>{
-    "alice_version": 0,
-    "bob_version": 1,
-    "title": "WebCamp Zagreb 2015",
-    "talks": [
-        {
-            "title": "Real-time JSON collabo",
-            "started": false,
-            "done": false
-        },
-        {
-            "title": "Lightning Talks",
-            "started": false,
-            "done": false
-        }
-    ]
-}</code></pre></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 676px; top: 182px;" data-block-id="847f4c3e0a1a8efdb79b9fac8b9eb6bf"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 20; opacity: 0.3;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: -148px; top: 29px;" data-block-id="1605a1771f8f62682c686b33f5e1f89a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 24; font-size: 98%;">
-<p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 1082px; top: 52px;" data-block-id="dc3fa81a4d13795cb09fba0205de9e5b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 25; font-size: 98%;">
-<p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
-</div></div>
-<div class="sl-block" data-block-type="code" style="width: 557px; height: 95px; left: -118px; top: 0px;" data-block-id="2868779cca0fa644c192b6fd98fd3036"><div class="sl-block-content" style="z-index: 22; border-style: solid; border-width: 1px;"><pre class="json"><code>{"op": "test", "path": "/bob_version", "value": 0},
-{"op": "test", "path": "/alice_version", "value": 0},
-{"op": "replace", "path": "/alice_version", "value": 1},
-{"op": "replace", "path": "/talks/1/started", "value": true}</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 557px; height: 95px; left: 519px; top: 0px;" data-block-id="1707eb75506a71018f3df16b93a361a2"><div class="sl-block-content" style="z-index: 26; border: 1px solid rgb(230, 145, 56);"><pre class="json"><code>{"op": "test", "path": "/alice_version", "value": 0},
-{"op": "test", "path": "/bob_version", "value": 0},
-{"op": "replace", "path": "/bob_version", "value": 1},
-{"op": "remove", "path": "/talks/0"}</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 439px; top: 29px;" data-block-id="432127b89f8829097bed14fe63627b69"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 27;">
-<p>A</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 489px; top: 29px;" data-block-id="27aa7518f918e47ba23207e088449199"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 28;">
-<p>B</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 607px; top: 691px;" data-block-id="63dd5df029b2c0b9ad16f2a134379a12"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 30;" data-fragment-index="0">
-<p>A</p>
-</div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 324px; top: 691px;" data-block-id="c95b6e0cf8d740e5ae2654a466ffe83b"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 31;" data-fragment-index="0">
-<p>B</p>
 </div></div></section><section data-id="13d142d33ee436a6eead71c0078f543c">
 
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 1px; top: -19px;" data-block-id="e3acf848eb9a5693d74adb647a5aad56"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 1px; top: -19px;" data-block-id="e3acf848eb9a5693d74adb647a5aad56"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;">
 <p>Track 1 - Alice</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 481px; top: -19px;" data-block-id="db6c356a6b951cb8b335214a0e76be34"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(230, 145, 56);">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 480px; left: 481px; top: -19px;" data-block-id="db6c356a6b951cb8b335214a0e76be34"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; color: rgb(230, 145, 56);">
 <p>Track 2 - Bob</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 399px; height: 412px; left: 42px; top: 20px;" data-block-id="4e6bf376707cb38ba8991b10afbfa072"><div class="sl-block-content" style="z-index: 14; border-style: solid; border-width: 1px; font-size: 90%;"><pre><code>{
-    "alice_version": 1,
+<div class="sl-block" data-block-type="code" style="width: 399px; height: 412px; left: 42px; top: 20px;" data-block-id="4e6bf376707cb38ba8991b10afbfa072"><div class="sl-block-content" style="z-index: 12; border-style: solid; border-width: 1px; font-size: 90%;"><pre><code>{
+    "alice_version": 0,
     "bob_version": 0,
     "title": "WebCamp Zagreb 2015",
     "talks": [
@@ -1050,7 +939,7 @@ Or wait for something?</p>
         },
         {
             "title": "Real-time JSON collabo",
-            "started": true,
+            "started": false,
             "done": false
         },
         {
@@ -1060,11 +949,16 @@ Or wait for something?</p>
         }
     ]
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 402px; height: 412px; left: 519px; top: 20px;" data-block-id="08617d63ae0bd4a6f84a1070016c96f8"><div class="sl-block-content" style="z-index: 18; border: 1px solid rgb(230, 145, 56); font-size: 90%;"><pre><code>{
+<div class="sl-block" data-block-type="code" style="width: 402px; height: 412px; left: 519px; top: 20px;" data-block-id="08617d63ae0bd4a6f84a1070016c96f8"><div class="sl-block-content" style="z-index: 11; border: 1px solid rgb(230, 145, 56); font-size: 90%;"><pre><code>{
     "alice_version": 0,
-    "bob_version": 1,
+    "bob_version": 0,
     "title": "WebCamp Zagreb 2015",
     "talks": [
+        {
+            "title": "Fast and fpsious",
+            "started": true,
+            "done": true
+        },
         {
             "title": "Real-time JSON collabo",
             "started": false,
@@ -1077,72 +971,111 @@ Or wait for something?</p>
         }
     ]
 }</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: -27px; top: 27px;" data-block-id="72dd0f342cf6cfb44eabe2451a5a73c4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; font-size: 98%;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: -27px; top: 27px;" data-block-id="72dd0f342cf6cfb44eabe2451a5a73c4"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 23; font-size: 98%;" data-fragment-index="0">
 <p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 966px; top: 24px;" data-block-id="4626f893d72fc5881602263bbd69dab1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; font-size: 98%;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 966px; top: 24px;" data-block-id="4626f893d72fc5881602263bbd69dab1"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 24; font-size: 98%;" data-fragment-index="0">
 <p style="color:rgb(106, 168, 79); font-size:29.4px; text-align:left">✓</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 324px; height: 60px; left: -292px; top: 64px;" data-block-id="b9cff4ae4bcdd7b8d90143ec7145f8f6"><div class="sl-block-content" style="z-index: 17; border-style: solid; border-width: 1px; font-size: 55%;"><pre class="json"><code>{"op": "test", "path": "/bob_version", "value": 0},
+<div class="sl-block" data-block-type="code" style="width: 324px; height: 60px; left: -292px; top: 64px;" data-block-id="b9cff4ae4bcdd7b8d90143ec7145f8f6"><div class="sl-block-content fragment" style="z-index: 22; border-style: solid; border-width: 1px; font-size: 55%;" data-fragment-index="0"><pre class="json"><code>{"op": "test", "path": "/bob_version", "value": 0},
 {"op": "test", "path": "/alice_version", "value": 0},
 {"op": "replace", "path": "/alice_version", "value": 1},
 {"op": "replace", "path": "/talks/1/started", "value": true}</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 324px; height: 60px; left: 932px; top: 59px;" data-block-id="c228baf1e0cff033dfde7ecb72aaf88b"><div class="sl-block-content" style="z-index: 21; border: 1px solid rgb(230, 145, 56); font-size: 55%;"><pre class="json"><code>{"op": "test", "path": "/alice_version", "value": 0},
+<div class="sl-block" data-block-type="code" style="width: 324px; height: 60px; left: 932px; top: 59px;" data-block-id="c228baf1e0cff033dfde7ecb72aaf88b"><div class="sl-block-content fragment" style="z-index: 25; border: 1px solid rgb(230, 145, 56); font-size: 55%;" data-fragment-index="0"><pre class="json"><code>{"op": "test", "path": "/alice_version", "value": 0},
 {"op": "test", "path": "/bob_version", "value": 0},
 {"op": "replace", "path": "/bob_version", "value": 1},
 {"op": "remove", "path": "/talks/0"}</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 2px; top: 25px;" data-block-id="b9201f0c7d74a3f3563dfb6b1e91767c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 22;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 2px; top: 25px;" data-block-id="b9201f0c7d74a3f3563dfb6b1e91767c"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 26;" data-fragment-index="0">
 <p>A</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 932px; top: 20px;" data-block-id="17285f53bf263f1368478ad5bda39f1e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 23;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 932px; top: 20px;" data-block-id="17285f53bf263f1368478ad5bda39f1e"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 27;" data-fragment-index="0">
 <p>B</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 557px; height: 95px; left: -117px; top: 446px;" data-block-id="b4586d0dadd26178ee4d6d2c2dd3cf5f"><div class="sl-block-content" style="z-index: 24; border: 1px solid rgb(230, 145, 56);"><pre class="json"><code>{"op": "test", "path": "/alice_version", "value": 0},
+<div class="sl-block" data-block-type="code" style="width: 557px; height: 95px; left: -117px; top: 446px;" data-block-id="b4586d0dadd26178ee4d6d2c2dd3cf5f"><div class="sl-block-content fragment" style="z-index: 14; border: 1px solid rgb(230, 145, 56);" data-fragment-index="1"><pre class="json"><code>{"op": "test", "path": "/alice_version", "value": 0},
 {"op": "test", "path": "/bob_version", "value": 0},
 {"op": "replace", "path": "/bob_version", "value": 1},
 {"op": "remove", "path": "/talks/0"}</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 440px; top: 474px;" data-block-id="aab143e4dbf639b487b19e317f6e2eb0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 25;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 440px; top: 471px;" data-block-id="aab143e4dbf639b487b19e317f6e2eb0"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 28;" data-fragment-index="1">
 <p>B</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 557px; height: 95px; left: 517px; top: 446px;" data-block-id="302f081202574fb10bc59c3a2fdf3a12"><div class="sl-block-content" style="z-index: 10; border-style: solid; border-width: 1px;"><pre class="json"><code>{"op": "test", "path": "/bob_version", "value": 0},
+<div class="sl-block" data-block-type="code" style="width: 557px; height: 95px; left: 517px; top: 446px;" data-block-id="302f081202574fb10bc59c3a2fdf3a12"><div class="sl-block-content fragment" style="z-index: 10; border-style: solid; border-width: 1px;" data-fragment-index="1"><pre class="json"><code>{"op": "test", "path": "/bob_version", "value": 0},
 {"op": "test", "path": "/alice_version", "value": 0},
 {"op": "replace", "path": "/alice_version", "value": 1},
 {"op": "replace", "path": "/talks/1/started", "value": true}</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 487px; top: 474px;" data-block-id="f67e98558a36d7ef01b2f19778e6ea3d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 27;">
+<div class="sl-block" data-block-type="text" style="height: auto; width: 30px; left: 487px; top: 474px;" data-block-id="f67e98558a36d7ef01b2f19778e6ea3d"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 30;" data-fragment-index="1">
 <p>A</p>
 </div></div>
-<div class="sl-block" data-block-type="text" data-block-id="02a5e91b86b8aef9e87f64702c150ec9" style="height: auto; min-width: 30px; min-height: 30px; width: 480px; left: -160px; top: 580px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 26; font-size: 70%;" data-fragment-index="2">
+<div class="sl-block" data-block-type="text" data-block-id="02a5e91b86b8aef9e87f64702c150ec9" style="height: auto; min-width: 30px; min-height: 30px; width: 480px; left: -160px; top: 580px;"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 29; font-size: 70%;" data-fragment-index="3">
 <p><span style="font-size:1.0em">- nothing related to this change</span></p>
 </div></div>
 
 
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 676px; top: 60px;" data-block-id="ae4a556de1384ce7d837f97ab6450c5c"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 28; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 676px; top: 60px;" data-block-id="ae4a556de1384ce7d837f97ab6450c5c"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 31; opacity: 0.4;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 23"><rect width="19" height="23" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
 
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 541px;" data-block-id="71ee0d17df7e14966f8b9f8970fc13ac"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 29; font-size: 70%;" data-fragment-index="1">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 541px;" data-block-id="71ee0d17df7e14966f8b9f8970fc13ac"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 32; font-size: 70%;" data-fragment-index="2">
 <p><span style="font-size:1.0em">Hmm.. version does not match, but Alice and Bob know what they changed since that time.</span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 482px; left: 0px; top: 604px;" data-block-id="a5124c74837fba7700b86fabdbf01aac"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 30; font-size: 70%;" dir="ui" data-fragment-index="3">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 482px; left: 0px; top: 604px;" data-block-id="a5124c74837fba7700b86fabdbf01aac"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 33; font-size: 70%;" dir="ui" data-fragment-index="4">
 <p><span style="font-size:1.0em">we may apply it  </span><span style="font-size:2.0em">☃</span></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 481px; left: 640px; top: 580px;" data-block-id="236449fd0965880a1c7a1d415972697a"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 31; font-size: 70%;" data-fragment-index="4">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 481px; left: 640px; top: 580px;" data-block-id="236449fd0965880a1c7a1d415972697a"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 34; font-size: 70%;" data-fragment-index="5">
 <p><span style="font-size:1.0em">- I was changing same array </span>☹</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 482px; left: 479px; top: 628px;" data-block-id="4c18350c40cd7557fc662a65654a0408"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 32; font-size: 70%;" dir="ui" data-fragment-index="5">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 482px; left: 479px; top: 628px;" data-block-id="4c18350c40cd7557fc662a65654a0408"><div class="sl-block-content fragment" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 35; font-size: 70%;" dir="ui" data-fragment-index="6">
 <p>that's the conflict that we can resolve</p>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 563px; height: 102px; left: 514px; top: 443px;" data-block-id="ff190e6eb55dd77060974071cd38fa3b"><div class="sl-block-content fragment" style="z-index: 35; border: 2px solid rgb(103, 78, 167);" data-fragment-index="6"><pre class="json"><code>{"op": "test", "path": "/bob_version", "value": 1},
+<div class="sl-block" data-block-type="code" style="width: 563px; height: 102px; left: 514px; top: 443px;" data-block-id="ff190e6eb55dd77060974071cd38fa3b"><div class="sl-block-content fragment" style="z-index: 13; border: 2px solid rgb(103, 78, 167);" data-fragment-index="7"><pre class="json"><code>{"op": "test", "path": "/bob_version", "value": 1},
 {"op": "test", "path": "/alice_version", "value": 0},
 {"op": "replace", "path": "/alice_version", "value": 1},
 {"op": "replace", "path": "/talks/0/started", "value": true}</code></pre></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 27px; left: 953px; top: 446px;" data-block-id="065ef5537add0b84c6254f4626ec17de"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(103, 78, 167)" data-shape-stretch="true" style="z-index: 36; opacity: 0.4;" data-fragment-index="6"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 27"><rect width="18" height="27" class="shape-element" fill="rgb(103, 78, 167)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 27px; left: 953px; top: 446px;" data-block-id="065ef5537add0b84c6254f4626ec17de"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(103, 78, 167)" data-shape-stretch="true" style="z-index: 38; opacity: 0.4;" data-fragment-index="7"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 17 27"><rect width="17" height="27" class="shape-element" fill="rgb(103, 78, 167)"></rect></svg></div></div>
 
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 215px; top: 42px;" data-block-id="d2eb5517f86e68fe99461ca884025e48"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 33; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 340px; top: 450px;" data-block-id="ba4a7b905f8d44e081843895b7ed3c7b"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 34; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 956px; top: 450px;" data-block-id="c408ff27f5552858eec579ee1ab8a44b"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 11; opacity: 0.4;" data-fragment-index="0"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 22"><rect width="18" height="22" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 215px; top: 42px;" data-block-id="d2eb5517f86e68fe99461ca884025e48"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 36; opacity: 0.4;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 21"><rect width="19" height="21" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 340px; top: 450px;" data-block-id="ba4a7b905f8d44e081843895b7ed3c7b"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 37; opacity: 0.4;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 21"><rect width="19" height="21" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 22px; left: 956px; top: 450px;" data-block-id="c408ff27f5552858eec579ee1ab8a44b"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(255, 217, 102)" data-shape-stretch="true" style="z-index: 17; opacity: 0.4;" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 21"><rect width="19" height="21" class="shape-element" fill="rgb(255, 217, 102)"></rect></svg></div></div>
 
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 31px; left: 828px; top: 507px;" data-block-id="b26a61198ea57feaffac89ea39f3e7f4"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(103, 78, 167)" data-shape-stretch="true" style="z-index: 38; opacity: 0.4;" data-fragment-index="6"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 18 31"><rect width="18" height="31" class="shape-element" fill="rgb(103, 78, 167)"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 345px; height: 122px; left: -303px; top: 20px;" data-block-id="2670e0dd81c78cef06aebe2ee37663c3"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 13; opacity: 0.23;" data-shape-stroke-color="#fff2cc" data-shape-stroke-width="1" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 345 122"><defs><clippath id="shape-mask-103-1443734482995"><rect width="345" height="122"></rect></clippath></defs><rect width="345" height="122" clip-path="url(#shape-mask-103-1443734482995)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#fff2cc" stroke-width="2"></rect></svg></div></div>
-<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 345px; height: 122px; left: 921px; top: 20px;" data-block-id="87782bf1a51f16b7c32d8304bae6ead3"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 12; opacity: 0.23;" data-shape-stroke-color="#fff2cc" data-shape-stroke-width="1" data-fragment-index="1"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 345 122"><defs><clippath id="shape-mask-104-1443734482998"><rect width="345" height="122"></rect></clippath></defs><rect width="345" height="122" clip-path="url(#shape-mask-104-1443734482998)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#fff2cc" stroke-width="2"></rect></svg></div></div></section><section data-id="26fd87fe386896a9aeb677e22395d672">
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 18px; height: 31px; left: 828px; top: 507px;" data-block-id="b26a61198ea57feaffac89ea39f3e7f4"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgb(103, 78, 167)" data-shape-stretch="true" style="z-index: 39; opacity: 0.4;" data-fragment-index="7"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 19 32"><rect width="19" height="32" class="shape-element" fill="rgb(103, 78, 167)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 345px; height: 122px; left: -303px; top: 20px;" data-block-id="2670e0dd81c78cef06aebe2ee37663c3"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 19; opacity: 0.23;" data-shape-stroke-color="#fff2cc" data-shape-stroke-width="1" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 345 123"><defs><clippath id="shape-mask-164-1443807955511"><rect width="345" height="123"></rect></clippath></defs><rect width="345" height="123" clip-path="url(#shape-mask-164-1443807955511)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#fff2cc" stroke-width="2"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 345px; height: 122px; left: 921px; top: 20px;" data-block-id="87782bf1a51f16b7c32d8304bae6ead3"><div class="sl-block-content fragment" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 18; opacity: 0.23;" data-shape-stroke-color="#fff2cc" data-shape-stroke-width="1" data-fragment-index="2"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 345 123"><defs><clippath id="shape-mask-163-1443807955509"><rect width="345" height="123"></rect></clippath></defs><rect width="345" height="123" clip-path="url(#shape-mask-163-1443807955509)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="#fff2cc" stroke-width="2"></rect></svg></div></div>
+<div class="sl-block" data-block-type="code" style="width: 399px; height: 412px; left: 42px; top: 20px;" data-block-id="61e0619a9c9c204af0223bf99779137d"><div class="sl-block-content fragment" style="z-index: 15; border-style: solid; border-width: 1px; font-size: 90%;" data-fragment-index="0"><pre><code>{
+    "alice_version": 1,
+    "bob_version": 0,
+    "title": "WebCamp Zagreb 2015",
+    "talks": [
+        {
+            "title": "Fast and fpsious",
+            "started": true,
+            "done": true
+        },
+        {
+            "title": "Real-time JSON collabo",
+            "started": true,
+            "done": false
+        },
+        {
+            "title": "Lightning Talks",
+            "started": false,
+            "done": false
+        }
+    ]
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="width: 402px; height: 412px; left: 519px; top: 20px;" data-block-id="39469897bde815550fa84f2e2030ac76"><div class="sl-block-content fragment" style="z-index: 16; border: 1px solid rgb(230, 145, 56); font-size: 90%;" data-fragment-index="0"><pre><code>{
+    "alice_version": 0,
+    "bob_version": 1,
+    "title": "WebCamp Zagreb 2015",
+    "talks": [
+        {
+            "title": "Real-time JSON collabo",
+            "started": false,
+            "done": false
+        },
+        {
+            "title": "Lightning Talks",
+            "started": false,
+            "done": false
+        }
+    ]
+}</code></pre></div></div></section><section data-id="26fd87fe386896a9aeb677e22395d672">
 <div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 0px;" data-block-id="37a150a1da752358ea72e6a1376c1707"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Multiple Versioned JSON PATCH</h2>
 </div></div>
@@ -1505,24 +1438,24 @@ C# - <a href="http://starcounter.io/" target="_blank">Starcounter</a></p>
 <p><span style="font-size:0.7em">tomalec</span></p>
 </div></div>
 <div class="sl-block" data-block-type="image" style="width: 40px; height: 40px; left: 722px; top: 548px;" data-block-id="5d00109dd1729dec6c9870efc5d35659"><div class="sl-block-content" style="z-index: 16;"><img data-natural-width="300" data-natural-height="300" style="" data-src="images/twitter-bird-dark-bgs.png"></div></div>
-<div class="sl-block" data-block-type="image" style="width: 80px; height: 58.4px; left: 880px; top: 431px;" data-block-id="03e0720559ff957a071d727ea73bdcb3"><div class="sl-block-content" style="z-index: 17;"><img data-natural-width="400" data-natural-height="292" style="" data-src="images/StarcounterLogo__1_.png"></div></div></section><section class="has-dark-background" data-background-color="#212121" data-id="61e426da234fa10adad42f715b2494cf"><div class="sl-block" data-block-type="text" data-block-id="c3ac181f53864a9a1d7fb1698a56a224" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 321px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; font-size: 80%;">
+<div class="sl-block" data-block-type="image" style="width: 80px; height: 58.4px; left: 880px; top: 431px;" data-block-id="03e0720559ff957a071d727ea73bdcb3"><div class="sl-block-content" style="z-index: 17;"><img data-natural-width="400" data-natural-height="292" style="" data-src="images/StarcounterLogo__1_.png"></div></div></section><section class="has-dark-background" data-background-color="#212121" data-id="61e426da234fa10adad42f715b2494cf"><div class="sl-block" data-block-type="text" data-block-id="c3ac181f53864a9a1d7fb1698a56a224" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 298px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10; font-size: 80%;">
 <p style="text-align: left;">Specs:</p>
 </div></div>
-<div class="sl-block" data-block-type="text" data-block-id="fd30f274788d881b44d5421b14684988" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 352px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; font-size: 60%;">
+<div class="sl-block" data-block-type="text" data-block-id="fd30f274788d881b44d5421b14684988" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 329px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; font-size: 60%;">
 <p style="text-align:left">JSON Patch - <a href="https://tools.ietf.org/html/rfc6902" target="_blank">https://tools.ietf.org/html/rfc6902</a></p>
 
 <p style="text-align:left">JSON Pointer - <a href="https://tools.ietf.org/html/rfc6901" target="_blank">https://tools.ietf.org/html/rfc6901</a></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 403px;" data-block-id="36857692ef369d3d04fc73dc3f86d1ca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 80%;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 382px;" data-block-id="36857692ef369d3d04fc73dc3f86d1ca"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; font-size: 80%;">
 <p style="text-align:left">Proposed conventions:</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 880px; left: 80px; top: 434px;" data-block-id="904098660d8865f22f51765249b23aeb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 60%;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 880px; left: 80px; top: 413px;" data-block-id="904098660d8865f22f51765249b23aeb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; font-size: 60%;">
 <p style="text-align:left">Versioned JSON Patch - <a href="https://github.com/tomalec/Versioned-JSON-Patch" target="_blank">https://github.com/tomalec/Versioned-JSON-Patch</a></p>
 </div></div>
-<div class="sl-block" data-block-type="text" data-block-id="47b814673145fb3c81fd325b8e9699e0" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 464px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; font-size: 80%;">
+<div class="sl-block" data-block-type="text" data-block-id="47b814673145fb3c81fd325b8e9699e0" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 445px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; font-size: 80%;">
 <p style="text-align:left">Libraries used:</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 880px; left: 80px; top: 495px;" data-block-id="fb7dc25dd5f392b4534d4de3e2d22ad7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; font-size: 60%;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 880px; left: 80px; top: 477px;" data-block-id="fb7dc25dd5f392b4534d4de3e2d22ad7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; font-size: 60%;">
 <p style="color:rgb(255, 255, 255); text-align:left">Fast  JSON Patch - <a href="https://github.com/Starcounter-Jack/JSON-Patch" target="_blank">https://github.com/Starcounter-Jack/JSON-Patch</a></p>
 
 <p style="color:rgb(255, 255, 255); text-align:left">JSON Patch Queue - <a href="https://github.com/PuppetJs/JSON-Patch-Queue" target="_blank">https://github.com/PuppetJs/JSON-Patch-Queue</a></p>
@@ -1534,20 +1467,26 @@ C# - <a href="http://starcounter.io/" target="_blank">Starcounter</a></p>
 <p style="color:rgb(255, 255, 255); text-align:left">PuppetJs - <a href="https://github.com/PuppetJs/PuppetJs" target="_blank">https://github.com/PuppetJs/PuppetJs</a><br>
 &lt;puppet-client&gt; -  <a href="https://github.com/PuppetJs/puppet-client" target="_blank">https://github.com/PuppetJs/puppet-client</a></p>
 </div></div>
-<div class="sl-block" data-block-type="text" data-block-id="b7d38a4238a1b0b446019aabbb654bce" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 1px; top: 260px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; font-size: 80%;">
+<div class="sl-block" data-block-type="text" data-block-id="b7d38a4238a1b0b446019aabbb654bce" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 1px; top: 237px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; font-size: 80%;">
 <p style="text-align:left">Visualization</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 291px;" data-block-id="b7a14e60737f8273376fe31bb6803ccb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; font-size: 60%;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 269px;" data-block-id="b7a14e60737f8273376fe31bb6803ccb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; font-size: 60%;">
 <p style="text-align:left"> <a href="http://tomalec.github.io/PuppetJs-operational-transformation/visualization.html" target="_blank">http://tomalec.github.io/PuppetJs-operational-transformation/visualization.html​</a></p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 178px;" data-block-id="3be83c30a168f3245f95adda3a94d5a9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; font-size: 80%;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 153px;" data-block-id="3be83c30a168f3245f95adda3a94d5a9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19; font-size: 80%;">
 <p style="text-align:left">Implementations:</p>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 79px; top: 209px;" data-block-id="61a7fe851375defa5eff000678c05493"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; font-size: 60%;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 79px; top: 185px;" data-block-id="61a7fe851375defa5eff000678c05493"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20; font-size: 60%;">
 <p style="text-align:left">JS browser, (complate node.js support in progres) <a href="https://github.com/PuppetJs/puppetjs" target="_blank">https://github.com/PuppetJs/puppetjs</a></p>
 
 <p style="text-align:left">C# <a href="http://starcounter.io/" target="_blank">http://starcounter.io/</a></p>
-</div></div></section></section>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 638px;" data-block-id="5a8941a05d4e48fa64d68c1a23e90062"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21; font-size: 80%;" dir="ui"><p style="text-align:left">App examples</p></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 79px; top: 670px;" data-block-id="875482c7ea21c0c02c6dff5b48ae0625"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 22; font-size: 60%;">
+<p style="text-align:left"><a href="http://starcounter.io/sample-apps/" target="_blank">http://starcounter.io/sample-apps/</a></p>
+</div></div>
+
+</section></section>
 			</div>
 		</div>
 
