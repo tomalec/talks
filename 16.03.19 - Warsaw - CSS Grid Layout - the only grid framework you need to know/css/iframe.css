@@ -1,0 +1,9 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: "Montserrat", Helvetica, sans-serif;
+}
+.container{
+    margin: 0 !important;
+}

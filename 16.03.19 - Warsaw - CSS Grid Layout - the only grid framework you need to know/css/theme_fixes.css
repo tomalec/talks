@@ -1,0 +1,30 @@
+/* theme overwrites to achive one from slides*/
+
+.reveal section img {
+    border: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    letter-spacing: initial;
+}
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+    max-width: initial;
+    max-height: initial;
+}
+
+.reveal pre {
+    box-shadow: initial;
+    width: initial;
+    margin: 0;
+}

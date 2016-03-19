@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html class="decks export loaded ua-phantomjs reveal-viewport theme-font-montserrat theme-color-black-orange">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>CSS Grid Layout - the only grid framework you need to know</title>
+	<meta name="description" content="CSS Grid Layout - the only grid framework you need to know / meet.js Summit 2016, 19 Match 2016, Warsaw, Poland ">
+	<link href="css/reveal.css" rel="stylesheet">
+	<link href="css/theme/night.css" rel="stylesheet">
+	<!-- <link href="css/theme/color-black-orange.css" rel="stylesheet"> -->
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/theme_fixes.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<style id="user-css-output" type="text/css"></style>
+
+	<style id="currentSlideFiddleStyle"></style>
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<link rel="import" href="bower_components/polymer/polymer.html">
+	<link rel="import" href="bower_components/juicy-iframe/juicy-iframe.html">
+
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<aside data-markdown class="notes">
+I **bet** at least **once** in your **lifetime** you though "Hey! my layout is sooo simple, why it have to be that hard to make it in CSS?!"
+At least I did curse many, many times while creating grid layout with CSS
+
+My name is, I'm from, I work for, where
+
+
+One thing you probably notice about my talk is that even if it meetJS I'll be speaking on CSS
+You may consider it as a **"how to write extremely efficient JavaScript code to create adaptive grid layout in responsive app"**,
+while as an **"extremely efficient code"** I mean **no code at all**.
+
+Moreover, I will **not going to advertize** any 3rd party framework, I will show you how you can use vanilla, **pure CSS** to write your **own framework** with almost no bytes.
+
+Plus if you have heard of ideas like **GSS** or **houdini** which opens CSS for programming - you may feel that the border between JS and CSS will finally **collapse** ;)
+
+
+
+Let's stick to the grid
+				</aside>
+				<h1 class="absolute-block" style="width: 800px; left: 80px; top: 70px; height: auto; text-align:left;">
+					CSS Grid Layout
+				</h1>
+				<p class="absolute-block" style="width: 600px; left: 80px; top: 280px; z-index: 12; color: rgb(182, 182, 182); text-align: left;">
+					Tomek Wytrębowicz
+				</p>
+				<p class="absolute-block" style="width: 198px; left: 762px; top: 549px; z-index: 13; color: rgb(255, 255, 255); text-align: left;">
+					<span style="font-size:0.7em">@tomalecpl</span>
+				</p>
+				<img class="absolute-block" style="width: 42px; height: 42px; left: 720px; top: 588px; z-index: 14;" data-natural-width="900" data-natural-height="900" data-src="images/github.png">
+				<p class="absolute-block" style="width: 198px; left: 762px; top: 588px; z-index: 15; color: rgb(255, 255, 255); text-align: left;">
+					<span style="font-size:0.7em">tomalec</span>
+				</p>
+				<img class="absolute-block" style="width: 40px; height: 40px; left: 722px; top: 548px; z-index: 16;" data-natural-width="300" data-natural-height="300" data-src="images/twitter-bird-dark-bgs.png">
+				<img class="absolute-block" style="width: 238px; height: 173.74px; left: 722px; top: 362.26px; z-index: 17;" data-natural-width="400" data-natural-height="292" data-src="images/StarcounterLogo__1_.png">
+				<p class="absolute-block" style="width: 600px; left: 80px; top: 167px; z-index: 18;">
+					the only grid framework you need to know
+				</p>
+			</section>
+			<section class="stack">
+				<section class="has-dark-background" data-background="images/grid_blue.jpg"  data-transition="slide-in fade-out">
+					<aside data-markdown class="notes">
+# 1:30
+					</aside>
+
+					<h1>The Grid</h1>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<img style="width: 960px;
+					height: 700px;" data-natural-width="1150" data-natural-height="900" data-src="images/fb_grid.png"/>
+					<div class="image-to-grid fragment" data-fragment-index="0" style="
+background: rgba(34, 34, 34, 0.5);
+background-size: 960px;
+grid: 115px 255px 385px 205px / 35px 218px 40px 407px;
+					">
+						<div style="grid-column: 1 / 5;"></div>
+						<div style="grid-column: 2 / 4;"></div>
+						<div style="grid-column: 4; grid-row: 2;"></div>
+						<div style="grid-column: 2 / 4; grid-row: 3;"></div>
+						<div style="grid-column: 2; grid-row: 4;"></div>
+						<div style="grid-column: 3; grid-row: 4;"></div>
+					</div>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<img style="width: 960px; height: 700px;" data-natural-width="1150" data-natural-height="900" data-src="images/spotify.png"/>
+					<div class="image-to-grid fragment" data-fragment-index="0" style="
+						background: rgba(34, 34, 34, 0.5);
+						background-size: 960px;
+						grid: 165px 150px 405px 240px / 45px 45px 480px 40px 40px 60px;
+					">
+						<div style="grid-column: 1 / 5;"></div>
+						<div style="grid-column: 1 / 3;"></div>
+						<div style="grid-column: 4 / 5;"></div>
+						<div style="grid-column: 1;"></div>
+						<div style="grid-column: 2 / 5; grid-row: 3 / 6">
+							<div class="image-to-grid" style="
+								grid: 1fr 100px / 80px 50px 50px 270px 110px;
+							">
+								<div style="grid-column: 1 / 3;"></div>
+								<div style="grid-column: 1 / 3;"></div>
+								<div style="grid-column: 1 / 2;"></div><div style="grid-column: 2 / 3;"></div>
+								<div style="grid-column: 1 / 5;"></div>
+								<div style="grid-column: 1 / 5;"></div>
+
+							</div>
+						</div>
+						<div style="grid-column: 1; grid-row: 4;"></div>
+						<div style="grid-column: 1; grid-row: 5;"></div>
+						<div style="grid-column: 1 / 5; grid-row: 6;"></div>
+					</div>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<img class="absolute-block" style="width: 960px; height: 700px;" data-natural-width="597" data-natural-height="434" data-src="images/Yahoo_Netscape.gif">
+					<div class="image-to-grid fragment" data-fragment-index="0" style="
+						background: rgba(34, 34, 34, 0.5);
+						background-size: 960px;
+						grid: 140px 25px 200px 220px 200px 25px 140px / 120px 100px 55px 55px 125px 225px;
+					">
+						<div style="grid-column: 3 / 4; grid-row: 2"></div>
+						<div style="grid-column: 4 / 5; grid-row: 2"></div>
+						<div style="grid-column: 5 / 6; grid-row: 2"></div>
+						<div style="grid-column: 3 / 6; grid-row: 3"></div>
+						<div style="grid-column: 2 / 7; grid-row: 4"></div>
+						<div style="grid-column: 3 / 5; grid-row: 5"></div>
+						<div style="grid-column: 3 / 4; grid-row: 6"></div>
+						<div style="grid-column: 4 / 5; grid-row: 6"></div>
+						<div style="grid-column: 5 / 6; grid-row: 5 / 7"></div>
+					</div>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<img style="height: 700px;" data-natural-width="640" data-natural-height="640" data-src="images/581265.jpg">
+					<div class="image-to-grid fragment" data-fragment-index="0" style="
+						background: rgba(34, 34, 34, 0.5);
+						width: 700px;
+						margin: 0 calc(50% - 350px);
+						grid: 175px 175px 160px 190px/ 115px 45px 110px 125px 125px 180px;
+					">
+						<div style="grid-column: 1 / 5; grid-row: 1"></div>
+						<div style="grid-column: 1 / 2; grid-row: 2"></div>
+						<div style="grid-column: 2 / 4; grid-row: 2"></div>
+						<div style="grid-column: 4 / 5; grid-row: 2"></div>
+						<div style="grid-column: 1 / 3; grid-row: 3"></div>
+						<div style="grid-column: 1 / 3; grid-row: 4"></div>
+						<div style="grid-column: 3 / 5; grid-row: 3 / 5"></div>
+						<div style="grid-column: 1 / 5; grid-row: 5"></div>
+						<div style="grid-column: 1 / 3; grid-row: 6"></div>
+						<div style="grid-column: 3 / 5; grid-row: 6"></div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<div style="widht: 100%; height: 100%; display: grid; grid: 50% 50% / 50% 50%; align-items: center ; justify-items: center ;">
+						<aside data-markdown class="notes">
+**why is it so? - grid is everywhere, way human brain percieve information**
+
+There's a gestalt school of design according to which we look
+
+- patterns
+- groups
+- proximity
+						</aside>
+						<h3 style="grid-column: 1/3; grid-row: 1/3;">
+							Gestalt
+						</h3>
+						<p style="grid-column: 1/3; grid-row: 1/3; position: relative; top: 2em; width: 50%;">
+							That's the way we perceive visual information
+						</p>
+						<img class="fragment" data-fragment-index="0" style="grid-area: 1/1; width: 300px;" data-src="images/gestalt/proximity.png"/>
+						<img class="fragment" data-fragment-index="0" style="grid-area: 1/2; width: 300px;" data-src="images/gestalt/common-regions.png"/>
+						<img class="fragment" data-fragment-index="0" style="grid-area: 2/1; width: 300px;" data-src="images/gestalt/closure.png"/>
+						<img class="fragment" data-fragment-index="0" style="grid-area: 2/2; width: 300px;" data-src="images/gestalt/symmetry.png"/>
+					</div>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+# 2:20
+
+Some of you are **old enough** you may recall how we make it in **DARK Ages**.
+					</aside>
+					<h1 class="absolute-center">
+						How we can do it?
+					</h1>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-background="images/pie_jesu_domine.gif">
+					<aside data-markdown class="notes">
+table inside a table, friend's **netscape** navigator
+
+**Don't blame yourself**: conceptually similar, and works.
+
+Problems
+					</aside>
+					<!-- Monks - Monty Python and The Holy Grail: https://youtu.be/YgYEuJ5u1K0 -->
+					<div class="fragment totop" data-fragment-index="0" style="height: 0;"></div>
+					<pre class="absolute-center">&lt;table&gt;</pre>
+					<div
+					 	class="fragment"
+						data-fragment-index="0"
+						style="background: rgba(34, 34, 34, 0.9); margin-top: -1em; padding: 3em 1em 1.5em; border-radius: 1em; z-index: 15;">
+						<div class="goodvsbad">
+							<ul class="good" style="z-index: 15;">
+								<li>conceptually similar</li>
+								<li>works!</li>
+							</ul>
+							<ul class="bad" style="z-index: 16;">
+								<li>mixes content with styles</li>
+								<li>layout is not a tabular <strong>data</strong></li>
+								<li>spacer gifs &amp; co.</li>
+								<li>table layout may be unpredictable</li>
+							</ul>
+						</div>
+					</div>
+					<p class="absolute-block fragment"
+						style="bottom: 2em; text-align: center; width: 100%;"
+						data-fragment-index="1">
+						<a
+							style="background: rgba(34, 34, 34, 0.9); margin-top: -1em; padding: 0.5em 1em; border-radius: 0.5em;"
+							href="https://www.w3.org/2002/03/csslayout-howto" target="_blank" title="even W3C made &quot;beautiful&amp; HOWTO in 2002">W3C: CSS Layout HOWTO</a>
+					</p>
+					<footer class="twitter">@tomalecpl</footer>
+					<p class="absolute-block" style="left: 0; bottom: 0; opacity: 0.7; font-size: 50%;">Monthy Pyton, video from <a href="https://youtu.be/YgYEuJ5u1K0">youtu.be/YgYEuJ5u1K0</a></p>
+				</section>
+				<section>
+					<div class="fragment totop" data-fragment-index="0" style="height: 2em;"></div>
+					<pre class="absolute-center">position: absolute;</pre>
+					<div class="goodvsbad fragment" data-fragment-index="0">
+						<ul class="good">
+							<li style="text-align:left">concerns separated!<span> ..almost</span></li>
+						</ul>
+						<ul class="bad">
+							<li>div-soup 🍜</li>
+							<li>hard to achieve</li>
+							<li>taking responsibility for document flow</li>
+							<li>fixed position are not very responsive</li>
+						</ul>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<div class="fragment totop" data-fragment-index="0" style="height: 2em;"></div>
+					<pre class="absolute-center">float: left | right;</pre>
+
+
+					<div class="goodvsbad fragment" data-fragment-index="0">
+						<ul class="good">
+							<li>great to float an image</li>
+							<li>job security</li>
+						</ul>
+						<ul class="bad">
+
+							<li>hard to achieve</li>
+							<li>hard to maintain</li>
+							<li>clear fixes hell</li>
+							<li>div-soup 🍜</li>
+						</ul>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<pre class="absolute-center">display: table;</pre>
+				</section>
+				<section data-transition="fade-in" data-background="images/Pie_jesu_domine.gif">
+					<div class="totop visible" style="height: 0;"></div>
+					<pre class="absolute-center">display: table;</pre>
+
+					<div
+						style="background: rgba(34, 34, 34, 0.9); margin-top: -1em; padding: 3em 1em 1.5em; border-radius: 1em; z-index: 16;">
+						<div class="goodvsbad">
+							<ul class="good" style="z-index: 14;">
+								<li>concerns separated</li>
+							</ul>
+							<ul class="bad" style="z-index: 15;">
+
+								<li>cheating ...</li>
+								<li>all problems related to &lt;table&gt;, except separation</li>
+								<li>no row-/colspans</li>
+							</ul>
+						</div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+					<p class="absolute-block" style="left: 0; bottom: 0; opacity: 0.7; font-size: 50%;">Monthy Pyton, video from <a href="https://youtu.be/YgYEuJ5u1K0">youtu.be/YgYEuJ5u1K0</a></p>
+				</section>
+				<section>
+					<div class="fragment totop" data-fragment-index="0" style="height: 2em;"></div>
+					<pre class="absolute-center">display: flex;</pre>
+
+					<div class="goodvsbad fragment" data-fragment-index="0">
+						<ul class="good">
+							<li>cool &amp; fresh</li>
+							<li>easy</li>
+							<li>meaningful</li>
+							<li>responsive</li>
+							<li>cross-browser support</li>
+						</ul>
+						<ul class="bad">
+							<li>single dimension</li>
+							<li>requires nesting 🍜</li>
+							<li>no row-/colspans</li>
+						</ul>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<div class="fragment totop" data-fragment-index="0" style="height: 2em;"></div>
+					<h6 class="absolute-center">CSS frameworks</h6>
+
+					<div class="goodvsbad fragment" data-fragment-index="0" data-transition="slide-in fade-out">
+						<ul class="good">
+							<li>+∞ to choose from</li>
+							<li>not your problem</li>
+						</ul>
+
+						<ul class="bad">
+							<li>cheating...
+								<br/> same hacks = same problems</li>
+							<li>yet another class langauge to learn</li>
+							<li>maintenance</li>
+							<li>vendor locking</li>
+							<li>mixability</li>
+							<li>overhead</li>
+						</ul>
+					</div>
+
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+## 7:00
+
+we were going **wrong direction**
+
+all we want is..
+					</aside>
+					<h1 class="absolute-center">What is the right way?</h1>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<pre class="absolute-block fragment" style="height: auto; min-width: 30px; min-height: 30px; width: 268px; left: 346px; top: 296px;" data-fragment-index="0">#container {</pre>
+					<pre class="absolute-block fragment" style="height: auto; min-width: 30px; min-height: 30px; width: 180px; left: 346px; top: 332px;" data-fragment-index="1">  display: </pre>
+					<pre class="absolute-block fragment" style="height: auto; min-width: 30px; min-height: 30px; width: 88px; left: 526px; top: 332px; text-align: left;" data-fragment-index="2">grid;</pre>
+					<pre class="absolute-block fragment" style="height: auto; min-width: 30px; min-height: 30px; width: 268px; left: 346px; top: 368px;" data-fragment-index="0">}</pre>
+
+					<h1 class="absolute-block fragment" style="width: 600px; left: 180px; top: 471px;" data-fragment-index="3">
+						It works!
+					</h1>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<h1 class="absolute-block" style="height: auto; min-width: 30px; min-height: 30px; width: 960px; left: 0px; top: 0px;">
+						CSS Grid Layout
+					</h1>
+					<p class="absolute-block" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 117px;">
+						<a href="https://www.w3.org/TR/css-grid-1/" target="_blank">https://www.w3.org/TR/css-grid-1/</a>
+					</p>
+					<div class="absolute-block fragment" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 210px;" data-fragment-index="0">
+						<ul>
+							<li>no div-soup</li>
+							<li>semantic HTML</li>
+							<li>meaningful CSS</li>
+							<li class="">responsive</li>
+							<li>easy to maintain</li>
+							<li>easy to replace</li>
+							<li>no vendor locking</li>
+							<li>no dependencies</li>
+							<li>no glue code</li>
+						</ul>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+```
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  grid-template-rows: 2em 1fr;
+```
+					</aside>
+					<h2>The right way</h2>
+					<div class="css-fiddle">
+						<pre class="html hljs"><code data-trim>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div&gt;Logo&lt;/div&gt;
+  &lt;div&gt;Header&lt;/div&gt;
+  &lt;div&gt;Nav&lt;/div&gt;
+  &lt;div&gt;Main content&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+						<div class="output">
+							<div id="example" class="resizable">
+								<div class="container">
+									<div>Logo</div>
+									<div>Header</div>
+									<div>Nav</div>
+									<div>Main content</div>
+								</div>
+							</div>
+						</div>
+						<textarea class="css" data-id="example">
+.container {
+  display:
+}
+						</textarea>
+					</div>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+## 9:00
+
+Finally CSS and browser is aware of 2d layout concepts
+
+go through them
+					</aside>
+
+					<h1 class="absolute-center" style="top: calc(50% - (1.3 * 1em));">
+						CSS is finally aware of 2D layout concepts!
+					</h1>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-transition="slide-in fade-out">
+					<h2>Example</h2>
+					<h3>&nbsp;</h3>
+					<div class="grid" style="display: grid; grid-template: 200px 1fr / 100px 1fr auto; height: 450px;">
+						<div style="grid-row: 1; grid-column: 1 / 3;">Header</div>
+						<div style="grid-row: 2; grid-column: 2;">Main</div>
+						<div style="grid-row: 2 / 4; grid-column: 1;">Nav</div>
+						<div style="grid-row: 3; grid-column: 2;">Footer</div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<h2>Grid Lines</h2>
+					<h3>&nbsp;</h3>
+					<div style="position: relative;">
+						<div class="grid" style="display: grid; grid-template: 200px 1fr / 100px 1fr auto; height: 450px;">
+							<div style="grid-row: 1; grid-column: 1 / 3;">Header</div>
+							<div style="grid-row: 2; grid-column: 2;">Main</div>
+							<div style="grid-row: 2 / 4; grid-column: 1;">Nav</div>
+							<div style="grid-row: 3; grid-column: 2;">Footer</div>
+
+							<div style="grid-row: 1; grid-column: 1; border: 4px solid #FFF; border-radius: 0; padding: 0; background: none; border-right: none; border-bottom: none; margin: -2px 0px 0px -2px !important;"></div>
+							<div style="grid-row: 1; grid-column: 2; border: 4px solid #FFF; border-radius: 0; padding: 0; background: none; border-bottom: none; margin: -2px 0px 0px -2px !important;"></div>
+							<div style="grid-row: 2; grid-column: 1; border: 4px solid #FFF; border-radius: 0; padding: 0; background: none; border-right: none; border-bottom: none; margin: -2px 0px 0px -2px !important;"></div>
+							<div style="grid-row: 2; grid-column: 2; border: 4px solid #FFF; border-radius: 0; padding: 0; background: none; border-bottom: none; margin: -2px 0px 0px -2px !important;"></div>
+							<div style="grid-row: 3; grid-column: 1; border: 4px solid #FFF; border-radius: 0; padding: 0; background: none; border-right: none; margin: -2px 0px 0px -2px !important;"></div>
+							<div style="grid-row: 3; grid-column: 2; border: 4px solid #FFF; border-radius: 0; padding: 0; background: none; margin: -2px 0px 0px -2px !important;"></div>
+						</div>
+						<div>
+							<div style="position: absolute; top: -50px; left: 0; color: #FFF; font-weight: bold;">1</div>
+							<div style="position: absolute; top: -50px; left: 200px; color: #FFF; font-weight: bold;">2</div>
+							<div style="position: absolute; top: -50px; right: 0; color: #FFF; font-weight: bold;">3</div>
+							<div style="position: absolute; top: -20px; left: -20px; color: #FFF; font-weight: bold;">1</div>
+							<div style="position: absolute; top: 80px; left: -20px; color: #FFF; font-weight: bold;">2</div>
+							<div style="position: absolute; bottom: 40px; left: -20px; color: #FFF; font-weight: bold;">3</div>
+							<div style="position: absolute; bottom: -20px; left: -20px; color: #FFF; font-weight: bold;">4</div>
+						</div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<h2>Grid Tracks</h2>
+					<h3>Rows</h3>
+					<div class="grid" style="display: grid; grid-template: 200px 1fr / 100px 1fr auto; height: 450px;">
+						<div style="grid-row: 1; grid-column: 1 / 3;">Header</div>
+						<div style="grid-row: 2; grid-column: 2;">Main</div>
+						<div style="grid-row: 2 / 4; grid-column: 1;">Nav</div>
+						<div style="grid-row: 3; grid-column: 2;">Footer</div>
+
+						<div style="grid-row: 1; grid-column: 1 / 3; color: #FFF; border-top: 4px solid #FFF; background: transparent; left: -2em; width: calc(100% + 4em); position: relative; border-radius: 0; text-align: left; top: -6px;">1</div>
+						<div style="grid-row: 2; grid-column: 1 / 3; color: #FFF; border-top: 4px solid #FFF; background: transparent; left: -2em; width: calc(100% + 4em); position: relative; border-radius: 0; text-align: left; top: -6px;">2</div>
+						<div style="grid-row: 3; grid-column: 1 / 3; color: #FFF; background: transparent; left: -2em; width: calc(100% + 4em); position: relative; border-radius: 0; text-align: left; top: 0;"><div style="position: absolute; width: 100%; border-top: 4px solid #FFF; border-bottom: 4px solid #FFF; top: -6px;bottom: -6px;">3</div></div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<h2>Grid Tracks</h2>
+					<h3>Columns</h3>
+					<div class="grid" style="display: grid; grid-template: 200px 1fr / 100px 1fr auto; height: 450px;">
+						<div style="grid-row: 1; grid-column: 1 / 3;">Header</div>
+						<div style="grid-row: 2; grid-column: 2;">Main</div>
+						<div style="grid-row: 2 / 4; grid-column: 1;">Nav</div>
+						<div style="grid-row: 3; grid-column: 2;">Footer</div>
+
+						<div style="grid-row: 1 / 3; grid-column: 1; color: #FFF; border-left: 4px solid #FFF; background: transparent; top: -2em; left: -8px; height: calc(100% + 4em); position: relative; border-radius: 0; text-align: left;">1</div>
+						<div style="grid-row: 1 / 3; grid-column: 2; color: #FFF; border: 4px solid #FFF; border-top: 0; border-bottom: 0; background: transparent; top: -2em; left: -6px; height: calc(100% + 4em); position: relative; border-radius: 0; text-align: left; width: calc(100% + 7.5px)">2</div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<h2>Grid Cells</h2>
+					<h3>&nbsp;</h3>
+					<div class="grid" style="display: grid; grid-template: 200px 1fr / 100px 1fr auto; height: 450px;">
+						<div style="grid-row: 1; grid-column: 2;">Header</div>
+						<div style="grid-row: 2; grid-column: 2;">Main</div>
+						<div style="grid-row: 2; grid-column: 1;">Nav</div>
+						<div style="grid-row: 3; grid-column: 2;">Footer</div>
+
+						<div style="grid-row: 1; grid-column: 1; background: rgba(231,231,231,1.0);border-radius: 0;"></div>
+						<div style="grid-row: 1; grid-column: 2; background: rgba(231,231,231,1.0);border-radius: 0;"></div>
+						<div style="grid-row: 2; grid-column: 1; background: rgba(231,231,231,1.0);border-radius: 0;"></div>
+						<div style="grid-row: 2; grid-column: 2; background: rgba(231,231,231,1.0);border-radius: 0;"></div>
+						<div style="grid-row: 3; grid-column: 1; background: rgba(231,231,231,1.0);border-radius: 0;"></div>
+						<div style="grid-row: 3; grid-column: 2; background: rgba(231,231,231,1.0);border-radius: 0;"></div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-transition="fade-in fade-out">
+					<h2>Grid Areas</h2>
+					<h3>&nbsp;</h3>
+					<div class="grid" style="display: grid; grid-template: 200px 1fr / 100px 1fr auto; height: 450px;">
+						<div style="grid-row: 1; grid-column: 1 / 3;background: rgba(231,231,231,1.0);border-radius: 0;">Header</div>
+						<div style="grid-row: 2; grid-column: 2;    background: rgba(231,231,231,1.0);border-radius: 0;">Main</div>
+						<div style="grid-row: 2 / 4; grid-column: 1;background: rgba(231,231,231,1.0);border-radius: 0;">Nav</div>
+						<div style="grid-row: 3; grid-column: 2;    background: rgba(231,231,231,1.0);border-radius: 0;">Footer</div>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+## 10:00
+					</aside>
+					<h1 class="absolute-center">The code!</h1>
+				</section>
+				<section>
+					<h2>Grid container</h2>
+					<div class="css-fiddle">
+						<pre class="html hljs"><code data-trim>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div&gt;A&lt;/div&gt;
+  &lt;div&gt;B&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;smth&quot;&gt;&lt;/div&gt;
+                    </code></pre>
+						<div class="output">
+							<div id="grid-container" class="resizable">
+								<div class="container" style="height: initial;">
+									<div>A</div>
+									<div>B</div>
+								</div>
+								<div class="smth">inline block</div>
+							</div>
+						</div>
+						<textarea class="css" data-id="grid-container">
+.container {
+  display: block;
+  border: 3px solid #FFC;
+}
+.smth{
+  display: inline-block;
+}
+						</textarea>
+					</div>
+					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
+						<ul class="good ticks">
+							<li class="fragment" data-fragment-index="0">Separate content and layout</li>
+						</ul>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+```
+ grid-template-columns: ;/* px/em/%/.. auto, fr, minmax()*/
+ grid-template-rows: ;
+ direction: rtl;
+ grid: 4em 1fr / 2em 1fr;
+```
+					</aside>
+					<h2>Track sizing</h2>
+					<div class="css-fiddle">
+						<pre class="html hljs"><code data-trim>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;a&quot;&gt;A&lt;/div&gt;
+  &lt;div class=&quot;b&quot;&gt;B&lt;/div&gt;
+  &lt;div class=&quot;c&quot;&gt;C&lt;/div&gt;
+  &lt;div class=&quot;d&quot;&gt;D&lt;/div&gt;
+  &lt;div class=&quot;e&quot;&gt;E&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+						<div class="output">
+							<div id="track-sizing" class="resizable">
+								<div class="container">
+									<div class="a">A</div>
+									<div class="b">B</div>
+									<div class="c">C</div>
+									<div class="d">D</div>
+									<div class="e">E</div>
+								</div>
+							</div>
+						</div>
+						<textarea class="css" data-id="track-sizing">
+.container {
+  display: grid;
+
+}
+						</textarea>
+					</div>
+					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
+						<ul class="good ticks">
+							<li>No div soup</li>
+							<li>No layout-specific HTML nodes (spacers, clearfixes, wrappers, etc.)</li>
+						</ul>
+					</div>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section data-notes="Something important">
+					<aside data-markdown class="notes">
+by default grid items are placed one by one in each grid cell according to dom order. But you can change it without touching the HTML. The simplest thing is to usee `order` property (also in flexbox)
+
+```
+  order: 3;
+  grid-column: 2;
+  grid-column: 1 / span 2;
+  grid-row: 1/3;
+```
+					</aside>
+					<h2>Items placement</h2>
+					<div class="css-fiddle">
+						<pre class="html hljs small"><code data-trim>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;a&quot;&gt;A&lt;/div&gt;
+  &lt;div class=&quot;b&quot;&gt;B&lt;/div&gt;
+  &lt;div class=&quot;c&quot;&gt;C&lt;/div&gt;
+  &lt;div class=&quot;d&quot;&gt;D&lt;/div&gt;
+  &lt;div class=&quot;e&quot;&gt;E&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+						<div class="output">
+							<div id="items-placement" class="resizable">
+								<div class="container">
+									<div class="a">A</div>
+									<div class="b">B</div>
+									<div class="c">C</div>
+									<div class="d">D</div>
+									<div class="e">E</div>
+								</div>
+							</div>
+						</div>
+						<textarea class="css" data-id="items-placement">
+.container {
+  display: grid;
+
+}
+.a{
+
+}
+.e{
+
+}
+						</textarea>
+					</div>
+					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
+						<ul class="good ticks">
+							<li>No HTML manipulations/JS needed to sort, re-arrange things</li>
+							<li>Accessibility, SEO</li>
+							<li>Row- &amp; colspans</li>
+							<li>Precise position controlled by browser</li>
+						</ul>
+					</div>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+## 15:40
+
+As a **math student with dyslexia** I have problem with numbers, you know adding, subtracting, moving them around..
+
+CSS Grid solves this as well
+					</aside>
+					<h2 class="absolute-center" style="top: calc(50%  - (1.3 * 1.5em));">
+						Numbers, numbers.. <br> Do I really have to know the math?!
+					</h2>
+				</section>
+				<section>
+					<h2>Named grid lines</h2>
+					<aside data-markdown class="notes">
+```
+  grid-template-columns: [left] 4em [center] 1fr [right];
+  grid-template-rows: [top] 1.5em [hero] 3em [content] 1fr [bottom];
+```
+					</aside>
+					<div class="css-fiddle">
+						<pre class="html hljs small"><code data-trim>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;a&quot;&gt;A&lt;/div&gt;
+  &lt;div class=&quot;b&quot;&gt;B&lt;/div&gt;
+  &lt;div class=&quot;c&quot;&gt;C&lt;/div&gt;
+  &lt;div class=&quot;d&quot;&gt;D&lt;/div&gt;
+  &lt;div class=&quot;e&quot;&gt;E&lt;/div&gt;
+&lt;/div&gt;
+                    </code></pre>
+						<div class="output">
+							<div id="named-lines" class="resizable">
+								<div class="container">
+									<div class="a">A</div>
+									<div class="b">B</div>
+									<div class="c">C</div>
+									<div class="d">D</div>
+									<div class="e">E</div>
+								</div>
+							</div>
+						</div>
+						<textarea class="css resizable" data-id="named-lines">
+.container {
+  display: grid;
+  grid-template-columns: 4em   1fr ;
+  grid-template-rows: 1.5em   3em    1fr ;
+}
+.a{
+  grid-column: 1 / 3;
+}
+.b{
+  grid-column: 2 / 3;
+  grid-row: 2;
+}
+.c{
+  grid-row: 2 / 3;
+}
+						</textarea>
+					</div>
+					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
+						<ul class="good ticks">
+							<li>Easy and meaningful code</li>
+							<li>No need for layout related classes in HTML</li>
+						</ul>
+					</div>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+```
+.container {
+  display: grid;
+  grid: 5em 1fr / 1.5em 1fr;
+/*
+  grid-template-areas: "head head"
+                       "nav main"
+                       "foot foot"
+*/
+}
+.container header{
+  grid-area: head;
+}
+.container nav{
+  grid-area: nav;
+}
+.container div{
+  grid-area: main;
+}
+.container footer{
+  grid-area: foot;
+}
+```
+					</aside>
+
+					<h2>Named areas</h2>
+					<div class="css-fiddle">
+						<pre class="html hljs small"><code data-trim>
+&lt;div class=&quot;container&quot;&gt;
+  &lt;header&gt;Header&lt;/header&gt;
+  &lt;nav&gt;Nav&lt;/nav&gt;
+  &lt;div&gt;Content&lt;/div&gt;
+  &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+                    </code></pre>
+						<div class="output">
+							<div id="named-areas" class="resizable">
+								<div class="container">
+									<header>Header</header>
+									<nav>Nav</nav>
+									<div>Content</div>
+									<footer>Footer</footer>
+								</div>
+							</div>
+						</div>
+						<textarea class="css resizable" data-id="named-areas">
+.container {
+  display: grid;
+  grid: 5em 1fr / 1.5em 1fr;
+
+}
+.container header{
+  grid-area: head;
+}
+.container nav{
+  grid-area: nav;
+}
+.container div{
+  grid-area: main;
+}
+.container footer{
+  grid-area: foot;
+}
+						</textarea>
+					</div>
+					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
+						<ul class="good ticks">
+							<li>Easy and meaningful code</li>
+							<li>No need for layout related classes in HTML</li>
+							<li>You can control entire layout at single point and single propery</li>
+						</ul>
+					</div>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+## 20:50
+
+more complete responsive facebook-like page layout
+
+
+```
+/* desktop */
+.container {
+  display: grid;
+  grid-template-areas: "head head"
+                       "nav subnav"
+                       "nav  main"
+                       "foot  foot";
+    grid-template-columns: 5em 1fr;
+    grid-template-rows: 3em auto 1fr auto;
+}
+/* mobile*/
+@media (max-width: 500px) {
+  .container {
+	grid-template-areas: "head"
+                         "nav"
+                         "subnav"
+                         "main"
+                         "foot";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3em auto auto minmax(2em, 1fr) auto;
+  }
+}
+/* common */
+.hero{
+  grid-area: head;
+}
+.nav{
+  grid-area: nav;
+}
+.subnav{
+  grid-area: subnav;
+}
+.content{
+  grid-area: main;
+}
+.footer{
+  grid-area: foot;
+}
+```
+					</aside>
+					<template is="dom-bind" id="responsiveGrid"
+						html="&lt;div class=&quot;container&quot;&gt;
+  &lt;div class=&quot;hero&quot;&gt;Hero&lt;/div&gt;
+  &lt;div class=&quot;nav&quot;&gt;Main nav&lt;/div&gt;
+  &lt;div class=&quot;subnav&quot;&gt;Sub nav&lt;/div&gt;
+  &lt;div class=&quot;content&quot;&gt;Content&lt;/div&gt;
+  &lt;div class=&quot;footer&quot;&gt;Footer&lt;/div&gt;
+&lt;/div&gt;"
+css='/* desktop */
+.container {
+  display: grid;
+  /*
+  grid-template-areas: "head head"
+                         "nav subnav"
+                         "nav  main  "
+                         "foot  foot";
+  grid-template-columns: 5em 1fr;
+  grid-template-rows: 3em auto 1fr auto;
+  */
+}
+/* mobile*/
+@media (max-width: 500px) {
+  .container {
+
+  }
+}
+/* common */
+.hero{
+  grid-area: head;
+}
+.nav{
+  grid-area: nav;
+}
+.subnav{
+  grid-area: subnav;
+}
+.content{
+  grid-area: main;
+}
+.footer{
+  grid-area: foot;
+}'>
+						<div class="iframe-fiddle">
+							<textarea class="html" style="font-size: 50%;" value="{{html::input}}" rows="7"></textarea>
+							<div class="output resizable">
+								<template is="juicy-iframe" content$="{{makeIframe(html,css)}}"></template>
+							</div>
+							<textarea class="css resizable" value="{{css::input}}" rows="{{rows}}"></textarea>
+						</div>
+					</template>
+					<script>
+					(function(){
+						var domBind = document.getElementById('responsiveGrid');
+						domBind.makeIframe = function(html, css){
+							this.rows = css.split(/\n/).length;
+							return `<link href="css/custom.css" rel="stylesheet">
+							<link href="css/iframe.css" rel="stylesheet"><style>` + css + '</style>' + html;
+						};
+						domBind.addEventListener('dom-change', function(){
+							chromeResizePropertyWorkaround(domBind.parentElement.querySelectorAll('.resizable'));
+						})
+					}());
+					</script>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+## 23:30
+
+still need a framework?
+					</aside>
+					<h1 class="absolute-center">Grid framework?</h1>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+```
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;/* repeat(12, 1fr); */
+}
+
+.grid > *{
+  grid-column: span 2;
+}
+```
+					</aside>
+					<h3>Write your own</h3>
+					<template is="dom-bind" id="framework"
+						html="&lt;div class=&quot;grid&quot;&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;"
+css='.grid {
+
+}
+'>
+						<div class="iframe-fiddle">
+							<div class="output resizable" style="grid-column: 1 / 4;">
+								<template is="juicy-iframe" content$="{{makeIframe(html,css)}}"></template>
+							</div>
+							<textarea class="css resizable" value="{{css::input}}" rows="{{rows}}"></textarea>
+						</div>
+					</template>
+					<script>
+					(function(){
+						var domBind = document.getElementById('framework');
+						domBind.makeIframe = function(html, css){
+							this.rows = css.split(/\n/).length;
+							return `<link href="css/custom.css" rel="stylesheet">
+							<link href="css/framework.css" rel="stylesheet"><style>` + css + '</style>' + html;
+						};
+						domBind.addEventListener('dom-change', function(){
+							chromeResizePropertyWorkaround(domBind.parentElement.querySelectorAll('.resizable'));
+						})
+					}());
+					</script>
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+			<section class="stack">
+				<section data-transition="slide-in fade-out">
+					<aside data-markdown class="notes">
+## 24:50
+					</aside>
+					<h1 class="absolute-center">
+						Can I use it?
+					</h1>
+				</section>
+				<section  data-transition="fade-in fade-out">
+					<h2>
+						Production
+					</h1>
+					<img src="images/caniuse.com.grid.png" style="height: 80%;" data-natural-width="1111" data-natural-height="794">
+					<p class="absolute-block" style="left: 0; bottom: 0; opacity: 0.7; font-size: 50%; background: #222;">source: <a href="http://caniuse.com/#feat=css-grid">caniuse.com/#feat=css-grid</a></p>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section  data-transition="fade-in fade-out">
+					<h2>Development</h2>
+					<table class="browser-support">
+						<tr>
+							<td><img src="images/edge_logo.svg" style="height: 2em;" alt="IE/Edge"><br>IE/Edge</td>
+							<td>Prefixed with <code>-ms</code></td>
+							<td>Old spec/syntax, but quite stable</td>
+						</tr>
+						<tr>
+							<td><img src="images/chromium_logo.png" style="height: 2em;" alt="Chrome/Opera"><br>Chromium</td>
+							<td>⚑ behind the flag<br> <code style="position: absolute;">experimental-web-platform-features </code></td>
+							<td>Latest spec</td>
+						</tr>
+						<tr>
+							<td><img src="images/firefox_logo.svg" style="height: 2em;" alt="Firefox"><br>Firefox</td>
+							<td>⚑ behind the flag<br><code>layout.css.grid.enabled</code></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td><img src="images/webkit_logo.svg" style="height: 2em;" alt="Webkit"><br/>Webkit</td>
+							<td>Prefixed with <code cla>-webkit</code></td>
+							<td>Enabled in Webkit nightlies</td>
+						</tr>
+						<tr><td>Polyfill</td><td colspan="2"><a href="https://github.com/FremyCompany/css-grid-polyfill">github.com/FremyCompany/css-grid-polyfill</a></td></tr>
+					</table>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section  data-transition="fade-in fade-out">
+					<h2>Learn and contribute</h2>
+					<div style="text-align:left; margin-top: 2em;">
+						<h3>Place to start fiddling with it</h3>
+						<p class="final-links">Igalia's demos and examples - <a href="http://igalia.github.io/css-grid-layout/" target="_blank">igalia.github.io/css-grid-layout/</a></p>
+						<p class="final-links">Grid by example - <a href="http://gridbyexample.com/" target="_blank">gridbyexample.com/</a></p>
+					</div>
+					<div style="text-align:left; margin-top: 2em;">
+						<h3>Make the awesome happen!</h3>
+						<p class="final-links">Read and raport bugs in spec - <a href="https://www.w3.org/TR/css-grid-1/" target="_blank">w3.org/TR/css-grid-1/</a></p>
+						<p class="final-links">Write browser tests - <a href="https://github.com/w3c/csswg-test" target="_blank">github.com/w3c/csswg-test</a></p>
+						<p class="final-links">Take part in workshops - <a href="http://fantasai.inkedblade.net/style/events/grid-workshop" target="_blank">fantasai.inkedblade.net/style/events/grid-workshop</a></p>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+			<section class="stack">
+				<section class="has-dark-background">
+					<aside data-markdown class="notes">
+## 26:20
+					</aside>
+					<h1 class="absolute-block" style="width: 800px; left: 80px; top: 69px; height: auto; color: rgb(255, 255, 255); font-size: 350%; text-align:left;">
+						Thanks!
+					</h1>
+					<p class="absolute-block" style="height: auto; width: 319px; left: 561px; top: 450px; z-index: 12; color: rgb(182, 182, 182); text-align: left;">
+						Tomek Wytrębowicz
+					</p>
+					<p class="absolute-block" style="height: 40px; left: 720px; top: 589px; font-size:0.7em;">
+						<img style="width: 40px; height: 40px; vertical-align: middle;" data-natural-width="900" data-natural-height="900" data-src="images/github.png"> tomalec
+					</p>
+					<p class="absolute-block" style="height: 40px; left: 720px; top: 548px; font-size:0.7em;">
+						<img style="width: 40px; height: 40px; vertical-align: middle;" data-natural-width="300" data-natural-height="300" data-src="images/twitter-bird-dark-bgs.png"> @tomalecpl
+					</p>
+					<img class="absolute-block" style="width: 80px; height: 58.4px; left: 880px; top: 431px;" data-natural-width="400" data-natural-height="292" data-src="images/StarcounterLogo__1_.png">
+				</section>
+				<section class="has-dark-background" data-background-color="#212121">
+					<div class="absolute-block" style="left: 0px; top: 153px; font-size: 80%;text-align:left;">
+						<p>My other talks:</p>
+						<p class="final-links"><a href="https://github.com/tomalec/talks" target="_blank">github.com/tomalec/talks/</a></p>
+						<p>Specs:</p>
+						<p class="final-links">CSS Grid Layout - <a href="https://www.w3.org/TR/css-grid-1/" target="_blank">w3.org/TR/css-grid-1/</a></p>
+						<p class="final-links">CSS Flexbox Layout - <a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank">w3.org/TR/css-flexbox-1/</a></p>
+						<p>Place to start fiddling with it</p>
+						<p class="final-links">Igalia's demos and examples - <a href="http://igalia.github.io/css-grid-layout/" target="_blank">igalia.github.io/css-grid-layout/</a></p>
+						<p class="final-links">Grid by example - <a href="http://gridbyexample.com/" target="_blank">gridbyexample.com</a></p>
+						<p class="final-links">Flexbox froggy - <a href="http://flexboxfroggy.com/" target="_blank">flexboxfroggy.com</a></p>
+						<p>CSS project:</p>
+						<p class="final-links">CSS Houdini - JS meets CSS - <a href="https://wiki.css-houdini.org/" target="_blank">wiki.css-houdini.org</a></p>
+						<p class="final-links">GSS - CSS with constrain solver - <a href="http://gridstylesheets.org/" target="_blank">gridstylesheets.org</a></p>
+						<p>Other:</p>
+						<p class="final-links">CSS Grid workshops - <a href="http://fantasai.inkedblade.net/style/events/grid-workshop" target="_blank">fantasai.inkedblade.net/style/events/grid-workshop/</a></p>
+						<p class="final-links">The guy who inspired me to make this talk - <a href="http://blogs.igalia.com/mrego/" target="_blank">blogs.igalia.com/mrego/</a></p>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<link rel="stylesheet" href="lib/css/dracula.css">
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			mouseWheel: false,
+			showNotes: false,
+			slideNumber: null,
+			autoSlide: 0,
+			autoSlideStoppable: true,
+			rollingLinks: false,
+			center: false,
+			loop: false,
+			rtl: false,
+			transition: "slide",
+			backgroundTransition: "slide",
+			maxScale: 2,
+			// Optional reveal.js plugins
+			dependencies: [{
+				src: 'plugin/highlight/highlight.js',
+				async: true,
+				condition: function() {
+					return !!document.querySelector('pre code');
+				},
+				callback: function() {
+					hljs.initHighlightingOnLoad();
+				}
+			}, {
+				src: 'plugin/notes/notes.js',
+				async: true
+			},
+			// { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+         //   	{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }
+	   		]
+		});
+	</script>
+</body>
+<script src="js/chromeResizePropertyWorkaround.js"></script>
+<script src="js/css-fiddle.js"></script>
+<script>
+	chromeResizePropertyWorkaround(document.querySelectorAll('.resizable'));
+	initializeCssFiddle('.css-fiddle textarea');
+</script>
+
+</html>
