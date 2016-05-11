@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body class="non-live-coding">
 	<div class="reveal">
 		<div class="slides">
 			<section>
@@ -79,7 +79,8 @@ Let's stick to the grid
 					<div class="image-to-grid fragment" data-fragment-index="0" style="
 background: rgba(34, 34, 34, 0.5);
 background-size: 960px;
-grid: 115px 255px 385px 205px / 35px 218px 40px 407px;
+grid-template-columns: 115px 255px 385px 205px;
+grid-template-rows: 35px 218px 40px 407px;
 					">
 						<div style="grid-column: 1 / 5;"></div>
 						<div style="grid-column: 2 / 4;"></div>
@@ -94,7 +95,8 @@ grid: 115px 255px 385px 205px / 35px 218px 40px 407px;
 					<div class="image-to-grid fragment" data-fragment-index="0" style="
 						background: rgba(34, 34, 34, 0.5);
 						background-size: 960px;
-						grid: 165px 150px 405px 240px / 45px 45px 480px 40px 40px 60px;
+						grid-template-columns: 165px 150px 405px 240px;
+						grid-template-rows: 45px 45px 480px 40px 40px 60px;
 					">
 						<div style="grid-column: 1 / 5;"></div>
 						<div style="grid-column: 1 / 3;"></div>
@@ -102,7 +104,8 @@ grid: 115px 255px 385px 205px / 35px 218px 40px 407px;
 						<div style="grid-column: 1;"></div>
 						<div style="grid-column: 2 / 5; grid-row: 3 / 6">
 							<div class="image-to-grid" style="
-								grid: 1fr 100px / 80px 50px 50px 270px 110px;
+								grid-template-columns: 1fr 100px;
+								grid-template-rows: 80px 50px 50px 270px 110px;
 							">
 								<div style="grid-column: 1 / 3;"></div>
 								<div style="grid-column: 1 / 3;"></div>
@@ -122,7 +125,8 @@ grid: 115px 255px 385px 205px / 35px 218px 40px 407px;
 					<div class="image-to-grid fragment" data-fragment-index="0" style="
 						background: rgba(34, 34, 34, 0.5);
 						background-size: 960px;
-						grid: 140px 25px 200px 220px 200px 25px 140px / 120px 100px 55px 55px 125px 225px;
+						grid-template-columns: 140px 25px 200px 220px 200px 25px 140px;
+						grid-template-rows: 120px 100px 55px 55px 125px 225px;
 					">
 						<div style="grid-column: 3 / 4; grid-row: 2"></div>
 						<div style="grid-column: 4 / 5; grid-row: 2"></div>
@@ -141,7 +145,8 @@ grid: 115px 255px 385px 205px / 35px 218px 40px 407px;
 						background: rgba(34, 34, 34, 0.5);
 						width: 700px;
 						margin: 0 calc(50% - 350px);
-						grid: 175px 175px 160px 190px/ 115px 45px 110px 125px 125px 180px;
+						grid-template-columns: 175px 175px 160px 190px;
+						grid-template-rows: 115px 45px 110px 125px 125px 180px;
 					">
 						<div style="grid-column: 1 / 5; grid-row: 1"></div>
 						<div style="grid-column: 1 / 2; grid-row: 2"></div>
@@ -157,7 +162,7 @@ grid: 115px 255px 385px 205px / 35px 218px 40px 407px;
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
-					<div style="widht: 100%; height: 100%; display: grid; grid: 50% 50% / 50% 50%; align-items: center ; justify-items: center ;">
+					<div style="widht: 100%; height: 100%; display: grid; grid-template-columns: 50% 50%; grid-template-rows: 50% 50%; align-items: center ; justify-items: center ;">
 						<aside data-markdown class="notes">
 **why is it so? - grid is everywhere, way human brain percieve information**
 
@@ -415,6 +420,16 @@ all we want is..
   display:
 }
 						</textarea>
+						<div class="non-live-coding-hint">
+							<h3><a>Non-live coding hint</a></h3>
+							<div><pre><code>.container{
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  grid-template-rows: 2em 1fr;
+}</code></pre>
+								Then resize the result box.
+							</div>
+						</div>
 					</div>
 
 					<footer class="twitter">@tomalecpl</footer>
@@ -570,6 +585,17 @@ go through them
   display: inline-block;
 }
 						</textarea>
+						<div class="non-live-coding-hint">
+							<h3><a>Non-live coding hint</a></h3>
+							<div><pre><code>.container {
+  display: inline-grid; /* grid */
+  border: 3px solid #FFC;
+}
+.smth{
+  display: inline-block;
+}</code></pre>
+							</div>
+						</div>
 					</div>
 					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
 						<ul class="good ticks">
@@ -584,7 +610,8 @@ go through them
  grid-template-columns: ;/* px/em/%/.. auto, fr, minmax()*/
  grid-template-rows: ;
  direction: rtl;
- grid: 4em 1fr / 2em 1fr;
+ grid-template: 2em 1fr / 4em 1fr;
+ grid: ;
 ```
 					</aside>
 					<h2>Track sizing</h2>
@@ -613,8 +640,20 @@ go through them
 .container {
   display: grid;
 
-}
-						</textarea>
+}</textarea>
+						<div class="non-live-coding-hint">
+							<h3><a>Non-live coding hint</a></h3>
+							<div><pre><code>.container{
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) 20% minmax(min-content, 2fr);/* px/em/%/.. auto, fr, minmax()*/
+  grid-template-rows: auto 4em;
+  /* direction: rtl; */
+  /* grid-template: 2em 1fr / 4em 1fr; */
+  /* grid: 2em 1fr / 4em 1fr;  */
+}</code></pre>
+								Then resize/shrink the result box.
+							</div>
+						</div>
 					</div>
 					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
 						<ul class="good ticks">
@@ -668,8 +707,16 @@ by default grid items are placed one by one in each grid cell according to dom o
 }
 .e{
 
-}
-						</textarea>
+}</textarea>
+						<div class="non-live-coding-hint">
+							<h3><a>Non-live coding hint</a></h3>
+							<div><pre><code>.a{ order: 1;} /* 1 is grater than nothing */
+.c{ order: 2;}
+.b{ grid-column: 3;}
+.c{ grid-column: 1 / span 2;}
+.d{ grid-row: 1/3; /* grid lines not tracks */}</code></pre>
+							</div>
+						</div>
 					</div>
 					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
 						<ul class="good ticks">
@@ -740,6 +787,25 @@ CSS Grid solves this as well
   grid-row: 2 / 3;
 }
 						</textarea>
+						<div class="non-live-coding-hint">
+							<h3><a>Non-live coding hint</a></h3>
+							<div><pre><code>.container{
+	display: grid;
+	grid-template-columns: [left] 4em [center] 1fr [right prawo];
+	grid-template-rows: [top] 1.5em [hero] 3em [content] 1fr [bottom];
+}
+.a{
+  grid-column: left / right;
+}
+.b{
+  grid-column: center / 3;
+  grid-row: 2;
+}
+.c{
+  grid-row: 2 / content;
+}</code></pre>
+							</div>
+						</div>
 					</div>
 					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
 						<ul class="good ticks">
@@ -755,7 +821,7 @@ CSS Grid solves this as well
 ```
 .container {
   display: grid;
-  grid: 5em 1fr / 1.5em 1fr;
+  grid: 1.5em 1fr / 5em 1fr;
 /*
   grid-template-areas: "head head"
                        "nav main"
@@ -800,8 +866,30 @@ CSS Grid solves this as well
 						<textarea class="css resizable" data-id="named-areas">
 .container {
   display: grid;
-  grid: 5em 1fr / 1.5em 1fr;
+  grid: 1.5em 1fr / 5em 1fr;
 
+}
+.container header{
+  grid-area: ;
+}
+.container nav{
+  grid-area: ;
+}
+.container div{
+  grid-area: ;
+}
+.container footer{
+  grid-area: ;
+}
+						</textarea>
+						<div class="non-live-coding-hint">
+							<h3><a>Non-live coding hint</a></h3>
+							<div><pre><code>.container {
+  display: grid;
+  grid: 1.5em 1fr / 5em 1fr; /* auto in 3rd row is comes as default  */
+  grid-template-areas: "head head"
+                       "nav main"
+                       "foot foot";
 }
 .container header{
   grid-area: head;
@@ -814,8 +902,10 @@ CSS Grid solves this as well
 }
 .container footer{
   grid-area: foot;
-}
-						</textarea>
+}</code></pre>
+								Then resize the result box.
+							</div>
+						</div>
 					</div>
 					<div class="overlayed-list fragment" data-fragment-index="0" style="bottom: 0;">
 						<ul class="good ticks">
@@ -886,14 +976,12 @@ more complete responsive facebook-like page layout
 css='/* desktop */
 .container {
   display: grid;
-  /*
   grid-template-areas: "head head"
                          "nav subnav"
                          "nav  main  "
                          "foot  foot";
   grid-template-columns: 5em 1fr;
   grid-template-rows: 3em auto 1fr auto;
-  */
 }
 /* mobile*/
 @media (max-width: 500px) {
@@ -923,6 +1011,23 @@ css='/* desktop */
 								<template is="juicy-iframe" content$="{{makeIframe(html,css)}}"></template>
 							</div>
 							<textarea class="css resizable" value="{{css::input}}" rows="{{rows}}"></textarea>
+							<div class="non-live-coding-hint">
+								<h3><a>Non-live coding hint</a></h3>
+								<div>
+									<pre><code>@media (max-width: 500px) {
+  .container {
+	grid-template-areas: "head"
+                         "nav"
+                         "subnav"
+                         "main"
+                         "foot";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3em auto auto minmax(2em, 1fr) auto;
+  }
+}</code></pre>
+									Then <strong>shrink</strong> the result box.
+								</div>
+							</div>
 						</div>
 					</template>
 					<script>
@@ -990,6 +1095,19 @@ css='.grid {
 								<template is="juicy-iframe" content$="{{makeIframe(html,css)}}"></template>
 							</div>
 							<textarea class="css resizable" value="{{css::input}}" rows="{{rows}}"></textarea>
+						<div class="non-live-coding-hint">
+							<h3><a>Non-live coding hint</a></h3>
+							<div><pre><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* grid-template-columns: 1fr 1fr ....; */
+}
+/* .grid > *{
+  grid-column: span 2;
+}*/</code></pre>
+								Then resize the result box.
+							</div>
+						</div>
 						</div>
 					</template>
 					<script>
@@ -1157,6 +1275,17 @@ css='.grid {
 <script>
 	chromeResizePropertyWorkaround(document.querySelectorAll('.resizable'));
 	initializeCssFiddle('.css-fiddle textarea');
+
+	// wait for dom-binds
+	setTimeout(function(){
+		// pick all hints
+		document.querySelectorAll('.non-live-coding-hint > h3').forEach(function(element){
+			// enable toggling
+			element.addEventListener('click', function(){
+				element.nextElementSibling.classList.toggle('visible');
+			});
+		});
+	});
 </script>
 
 </html>

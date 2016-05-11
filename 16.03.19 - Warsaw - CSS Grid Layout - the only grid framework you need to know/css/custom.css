@@ -193,6 +193,35 @@ textarea {
     grid-column: 1 / span 3;
     text-align: left;
 }
+/** non-live coding hints */
+.css-fiddle .non-live-coding-hint,
+.iframe-fiddle .non-live-coding-hint{
+    display: none;
+    font-size: 50%;
+    text-align: left;
+    opacity: 0.6;
+    margin-top: 0.5em;
+    grid-row: 4;
+    grid-column: 1 / span 3;
+}
+.non-live-coding .css-fiddle .non-live-coding-hint{
+    display: block;
+}
+.non-live-coding .iframe-fiddle .non-live-coding-hint{
+    display: block;
+    overflow: auto;
+}
+/* toggling */
+.non-live-coding .non-live-coding-hint h3{
+    cursor: pointer;
+}
+.non-live-coding .non-live-coding-hint > div{
+    display: none;
+}
+.non-live-coding .non-live-coding-hint > div.visible{
+    display: block;
+}
+/** end of hints */
 
 .container , .grid {
     margin: 8px !important;
