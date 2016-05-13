@@ -322,3 +322,21 @@ p.final-links {
 .image-to-grid .image-to-grid > div{
     border: 4px solid #AED2EC;
 }
+
+/** feature detection */
+.reveal section .feature-detection {
+    box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.75),
+                inset  0px 0px 10px 0px rgba(255, 0, 0, 0.75);
+    margin: 10px;
+    padding: 1em;
+    font-size: 80%;
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    text-align: left;
+}
+@supports( (display: grid) or (display: -ms-grid) ) {
+    .feature-detection {
+        display: none;
+    }
+}
