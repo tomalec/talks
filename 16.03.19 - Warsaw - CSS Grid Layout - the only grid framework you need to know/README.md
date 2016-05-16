@@ -14,3 +14,7 @@ You will see how to create almost any page layout with few lines of clear CSS, w
  :exclamation: CSS Grid support is needed to use the slides: Chrome with [chrome://flags/](chrome://flags/) `enable-experimental-web-platform-features`
 
  Then you are free to go to the [slides](http://tomalec.github.io/talks/16.03.19%20-%20Warsaw%20-%20CSS%20Grid%20Layout%20-%20the%20only%20grid%20framework%20you%20need%20to%20know).
+
+
+## [Video](https://youtu.be/8xQWMf0NH_s?list=UU2aX7cPDv8Stij0kBCM_qgg)
+ https://youtu.be/8xQWMf0NH_s?list=UU2aX7cPDv8Stij0kBCM_qgg
