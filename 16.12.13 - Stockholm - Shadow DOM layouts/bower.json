@@ -1,5 +1,5 @@
 {
-  "name": "16.12.14 - Stockholm - Shadow DOM layout compositions / Starcounter Tech Day 2016, 14 December, Stockholm, Sweden",
+  "name": "shadow-dom-layout-compositions-talk",
   "homepage": "https://github.com/tomalec/talks",
   "authors": [
     "Tomek Wytrebowicz <tomalecpub@gmail.com>"
@@ -17,5 +17,9 @@
     "tests"
   ],
   "dependencies": {
+    "juicy-html": "^1.1.0",
+    "webcomponentsjs": "^0.7.23",
+    "polymer": "^1.7.0",
+    "reveal-highlight-themes": "^8.4.0"
   }
 }

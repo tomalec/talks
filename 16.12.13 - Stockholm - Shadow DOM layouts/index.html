@@ -20,6 +20,11 @@
 	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
 	<link rel="import" href="bower_components/polymer/polymer.html">
 	<!-- <link rel="import" href="bower_components/juicy-iframe/juicy-iframe.html"> -->
+	<link rel="import" href="bower_components/juicy-html/juicy-html.html">
+	<link rel="import" href="elements/juicy-code-sample.html">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="bower_components/reveal-highlight-themes/styles/monokai_sublime.css" id="highlight-theme">
 
 </head>
 
@@ -230,6 +235,7 @@ But the key actor here is the shadow dom
 				</section>
 				<section>
 					<h3>In example</h3>
+					<pre class="hljs html"><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" unsafe></template></pre>
 <pre>
 App dev exposes meaningful HTML elements his/her
 app delivers for given page or partial
