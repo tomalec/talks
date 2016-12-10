@@ -26,6 +26,5 @@
   },
   "_source": "https://github.com/Polymer/webcomponentsjs.git",
   "_target": "^0.7.23",
-  "_originalSource": "webcomponentsjs",
-  "_direct": true
+  "_originalSource": "webcomponentsjs"
 }

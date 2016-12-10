@@ -17,9 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "juicy-html": "^1.1.0",
     "webcomponentsjs": "^0.7.23",
-    "polymer": "^1.7.0",
-    "reveal-highlight-themes": "^8.4.0"
+    "polymer": "^1.7.0"
   }
 }
