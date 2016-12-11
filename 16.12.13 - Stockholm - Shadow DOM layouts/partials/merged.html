@@ -1,0 +1,27 @@
+<style>
+    .Products-layout{
+    	display: grid;
+    	grid: "img id barcode" min-content
+    	      "img name barcode" min-content
+    	      "img price desc" min-content
+    	     / 1fr 2fr 2fr;
+    	grid-gap: 1em;
+    	align-content: center;
+    	justify-content: center;
+    	align-items: center;
+    }
+</style>
+<div class="Products-layout">
+	<div style="grid-area: img; align-self: center;"><content select="[slot='Images/carousel']"></content></div>
+    <div style="grid-area: id;"><content select="[slot='Products/id']"></content></div>
+    <div style="grid-area: name;"><content select="[slot='Products/name']"></content></div>
+    <div style="grid-area: price;"><content select="[slot='Products/price']"></content></div>
+    <div style="grid-area: barcode;"><content select="[slot='Products/barcode']"></content></div>
+</div>
+<div style="display: none;">
+    <content select="[slot='Products/next-prev-buttons']"></content>
+	<content select="[slot='Products/breadcrumbs']"></content>
+	<content select="[slot='Products/shops-box']"></content>
+	<content select="[slot='Products/stock']"></content>
+    <div style="grid-area: chart;"><content select="[slot='Products/sales-page']"></content></div>
+</div>

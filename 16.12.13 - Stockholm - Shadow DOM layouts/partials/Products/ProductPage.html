@@ -1,8 +1,27 @@
-<link rel="import" href="/sys/pikaday-decorator/pikaday-decorator.html" />
+<link rel="import" href="/sys/products-chart/products-chart.html" />
 <template>
-    <h2>Product Page</h2>
+    <h2 slot="Products/header">Product Page<span>!</span></h2>
     <template is="dom-bind">
         <input slot="Products/id" value="{{model.ID$::input}}" placeholder="enter ID here"/>
         <input slot="Products/name" value="{{model.Name$::input}}" placeholder="enter name here">
+    </template>
+    <products-chart slot="Products/chart"></products-chart>
+    <template is="starcounter-composition">
+        <style>
+            .products-field {
+                flex: 1;
+                box-shadow: 0 0 1em gold;
+            }
+        </style>
+        <content select="[slot='Products/header']"></content>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div class="Products-field">
+                <content select="[slot='Products/id']"></content>
+            </div>
+            <div class="Products-field">
+                <content select="[slot='Products/name']"></content>
+            </div>
+        </div>
+        <content select="[slot='Products/chart']"></content>
     </template>
 </template>

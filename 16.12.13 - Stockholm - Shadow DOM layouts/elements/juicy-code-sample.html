@@ -59,14 +59,23 @@ version: 1.1.0
             if (isSafari) {
                 range.selectNode(this);
             }
-
-            if(this.hasAttribute('unsafe')){
-                html = replaceHtmlEntities(html);
+            var fragment;
+            fragment = document.createElement('code');
+            fragment.setAttribute('data-noescape','');
+            if(this.hasAttribute('nohighlight')){
+                fragment.classList.add('nohighlight');
+            }
+            if(this.hasAttribute('lowlight')){
+                // markDirectChildren | markComposition | markSlots
+                fragment.classList.add('lowlight');
+                html = highlightOnly(range, range.createContextualFragment(html), MARKERS[this.getAttribute('lowlight')]);
+                fragment.innerHTML = html;
+            } else if(this.hasAttribute('unsafe')){
+                fragment.innerHTML = replaceHtmlEntities(html);
+            } else {
+                fragment.appendChild(range.createContextualFragment(html));
             }
 
-            // var fragment = range.createContextualFragment(html);
-            var fragment = document.createElement('code');
-            fragment.innerHTML = html;
             // convert dynamic NodeList to regullar array
             this.stampedNodes = Array.prototype.slice.call(fragment.childNodes);
             // attach models
@@ -138,6 +147,62 @@ version: 1.1.0
 
         function replaceHtmlEntities(str) {
             return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        const HIGHLIGHT_TOKEN = 'HIGHLIGHT-THIS';
+        const HIGHLIGHT_TOKEN_END = 'HIGHLIGHT-THIS-END';
+        // const HIGHLIGHT_PATTERN = /HIGHLIGHT-THIS&lt;([^ &]+)/g;
+        const HIGHLIGHT_PATTERN = /([ \t]+)HIGHLIGHT-THIS(.+)/g;
+        const HIGHLIGHT_PATTERN_END = /HIGHLIGHT-THIS-END/g;
+        function highlightOnly(range, html, marker){
+            var elements = html.querySelectorAll('template')
+
+
+            Array.prototype.forEach.call(elements, marker);
+
+            var wrapper = document.createElement('div');
+            wrapper.appendChild(html);
+            debugger
+            // return replaceHtmlEntities(wrapper.innerHTML).replace(HIGHLIGHT_PATTERN, '&lt;<span class="hljs-name">$1</span>');
+            return replaceHtmlEntities(wrapper.innerHTML)
+                    .replace(HIGHLIGHT_PATTERN, '<span class="hljs-line">$1$2')
+                    .replace(HIGHLIGHT_PATTERN_END, '</span>');
+
+        }
+
+        const MARKERS = {
+            markDirectChildren: function markDirectChildren(element){
+                Array.prototype.forEach.call(element.content.children, function(child){
+                    if(child.tagName === 'TEMPLATE'){
+                        if(child.hasAttribute('is') && child.getAttribute('is').indexOf('dom-') > -1){
+                            markDirectChildren(child);
+                        }
+                    } else {
+                        markElement(child);
+                    }
+                });
+            },
+            markComposition: function markComposition(element){
+                Array.prototype.forEach.call(
+                    element.content.querySelectorAll('[is="starcounter-composition"]'),
+                    markElement
+                );
+            },
+            markSlots: function markSlots(element){
+                Array.prototype.forEach.call(
+                    element.content.querySelectorAll('[is="starcounter-composition"]'),
+                    function(composition){
+                        Array.prototype.forEach.call(
+                            composition.content.querySelectorAll('slot, content'),
+                            markElement
+                        );
+                    }
+                );
+            }
+        }
+        function markElement(element){
+            element.insertAdjacentText('beforeBegin', HIGHLIGHT_TOKEN);
+            element.insertAdjacentText('afterEnd', HIGHLIGHT_TOKEN_END);
         }
     })(window);
 </script>
