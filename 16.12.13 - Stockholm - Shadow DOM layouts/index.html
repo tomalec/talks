@@ -289,6 +289,7 @@ it will improve code mainenance 4 U
 					</aside>
 					<h3>Individual app</h3>
 					<div  style="text-align: left;">
+						<h4>Shadow DOM layouts</h4>
 						<ul>
 							<li>Same results as in writing monolithic front are available</li>
 							<li>Separates layout from functionality</li>
@@ -300,6 +301,7 @@ it will improve code mainenance 4 U
 							<li>A/B testing</li>
 							<li>Generating layouts</li>
 						</ul>
+						<h4 c lass="fragment" data-fragment-index="0">Tools</h4>
 						<ul class="fragment" data-fragment-index="0">
 							<li>Change the layout using browser tools, then just click save</li>
 						</ul>
@@ -410,23 +412,25 @@ Untangle functional els
 
 					<h3>Default compositions</h3>
 					<p>Migrate old-school code</p>
-					<div class="absolute-center fragment" data-fragment-index="0">As simple in code as it looks in pictures</div>
+					<div class="absolute-center fragment current-visible" data-fragment-index="0">As simple in code as it looks in pictures</div>
 					<div style="display: flex;">
 						<div style="width: 50%;" class="crossfading">
-							<div class="fragment" data-fragment-index="1">identify functional elements</div>
-<pre class="html hljs fragment current-visible hide-invisible" data-fragment-index="3"
+							<div class="fragment" data-fragment-index="2">identify functional elements</div>
+<pre class="html hljs fragment current-visible hide-invisible" data-fragment-index="1"
  ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" unsafe></template></pre>
-<pre class="html hljs fragment " data-fragment-index="4"
+<pre class="html hljs fragment " data-fragment-index="2"
 ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markDirectChildren"></template></pre>
 						</div>
 						<div style="width: 50%;">
-							<div class="fragment" data-fragment-index="2">move the rest into composition</div>
+							<div class="fragment" data-fragment-index="6">move the rest into composition</div>
 						   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="5"
-						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage-bare.html" unsafe></template></pre>
+						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage-bare.html" lowlight="markDirectChildren"></template></pre>
 						   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="6"
 						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markComposition"></template></pre>
 						   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="7"
 						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markSlots"></template></pre>
+						   <pre class="html hljs fragment" data-fragment-index="10"
+						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markComposition"></template></pre>
 					</div>
 					<div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
 						<ul class="good ticks">
@@ -509,23 +513,40 @@ we now receive functional elements separated from layout.
 Then we can safely change the layout composition without touching those elements. -->
 					</aside>
 					<h3>Merged partial</h3>
-					<pre>-[Pic of many individual apps with highlighted elements]
-receive list of functional elements
-and the separated composition
--[e;ements get extracted and put one below another]
-- We are fetching the composition for such merged partial
-  from the database
--[merged partial url]
-- If we do have layout composition stored in DB for this
-  combination SC applies it automatically
-- [merged results]
-- If there is none, we start with default layouts concatenated
- So, in worst case, if we haven't prepared layout for any
-  combination, the merged result will look as before.
+					<pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="0">[Pic of many apps on the same screen stacked]</pre>
+
+				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="1"
+				   ><template is="juicy-code-sample" content="./partials/Merged.html" lowlight="markDirectChildren"></template></pre>
+				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="2"
+				   ><template is="juicy-code-sample" content="./partials/Merged.html" lowlight="markComposition"></template></pre>
+					<div class="fragment current-visible hide-invisible " data-fragment-index="3">
+						Replace defaults with:
+					   <pre class="sql hljs"
+				   >SELECT * FROM HTMLComposition WHERE Key = ""</pre>
+			   		</div>
+				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="4"
+				   ><template is="juicy-code-sample" content="./partials/MergedComposition.html" unsafe></template></pre>
+				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="5"
+				   ><template is="juicy-code-sample" content="./partials/MergedComposition.html" lowlight="markSlots"></template></pre>
+				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="6">[Integrated]</pre>
+
+				   <div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
+					   <ul class="good ticks">
+						   <li>Change the layout without touching funtional elements</li>
+						   <li>Reuse layouts provided by app dev</li>
+						   <li>Layouts are managable as any other data in <img style="width: 1em; height: 1em;" alt="Starcounter" data-natural-width="416" data-natural-height="416" src="images/Starcounter-logo.png"></li>
+					   </ul>
+				   </div>
+
+				   <div class="fragment" data-fragment-index="11">
+						<h4>What if there is none?</h4>
+						<p>Use defaults</p>
+<pre>
  No worries, we have plans to improve this step as well.
  Anyway, what's more important we have many means to provide this layout.
 
 </pre>
+					</div>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
@@ -554,22 +575,12 @@ let's just tak quick look on what we can do with this composition for merged par
 						</li>
 					</ul>
 
-					<footer class="twitter">@tomalecpl</footer>
-				</section>
-				<section>
-					<aside data-markdown class="notes">
-As in this example, you can totally mix the elements					</aside>
-					<h4>Example</h4>
-
-					Code sample with mixed elements, hidden, custom elements, styles
 					<div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
-						<ul class="good ticks">
-							<li>Change the layout without touching funtional elements</li>
-							<li>Reuse layouts provided by app dev</li>
-							<li>Flexible as writing custom HTML page from top to bottom</li>
-							<li>Layouts are managable as any other data in <img style="width: 1em; height: 1em;" alt="Starcounter" data-natural-width="416" data-natural-height="416" src="images/Starcounter-logo.png"></li>
-						</ul>
-					</div>
+ 					   <ul class="good ticks">
+ 						   <li>Flexible as writing custom HTML page from top to bottom</li>
+ 					   </ul>
+ 				   </div>
+
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 			</section>
@@ -742,7 +753,7 @@ now
 						<li>Do not expose <code>TextNode</code>s on root level (use <code>&lt;span&gt;</code>)</li>
 						<li>Prefix classnames, ids, slot names w/ App name</li>
 						<li>explicit slot names</li>
-						<li>do not use default slot</li>
+						<li>do not use default slot in default compositions</li>
 					</ul>
 					<pre>[gif/iframe w/ example]</pre>
 					<footer class="twitter">@tomalecpl</footer>
@@ -753,45 +764,7 @@ now
 
 			<section class="stack">
 				<section  data-transition="fade-in fade-out">
-					<h1>Brower support</h1>
-					<footer class="twitter">@tomalecpl</footer>
-				</section>
-				<section  data-transition="fade-in fade-out">
-					<h2>Shadow DOM v1</h2>
-					<table class="browser-support">
-						<tr>
-							<td><img src="images/wc_logo.svg" style="height: 2em; width: 2em" alt="Chrome/Opera">Polyfill</td>
-							<td><span title="Supported" class="supported">✓</span></td>
-							<td>
-								by Google team, supports V0, V1 in development.<br/>
-								Supports all browsers below
-							</td></tr>
-						<tr>
-							<td><img src="images/Chrome-logo.png" style="height: 2em; width: 2em" alt="Chrome/Opera">Chrome</td>
-							<td><span title="Supported" class="supported">✓</span></td>
-							<td>V0 &amp; V1</td>
-						</tr>
-						<tr>
-							<td><img src="images/Opera_logo.png" style="height: 2em; width: 2em" alt="Chrome/Opera">Opera</td>
-							<td><span title="Supported" class="supported">✓</span></td>
-							<td>V0 &amp; V1</td>
-						</tr>
-						<tr>
-							<td><img src="images/firefox_logo.svg" style="height: 2em; width: 2em" alt="Firefox">Firefox</td>
-							<td><span title="Supported" class="almost-supported">•</span></td>
-							<td>⚑ behind the flag <code>dom.webcomponents.enabled</code></td>
-						</tr>
-						<tr>
-							<td><img src="images/webkit_logo.svg" style="height: 2em; width: 2em" alt="Webkit">Safari</td>
-							<td><span title="Supported" class="supported">✓</span></td>
-							<td>V1 (Safari 10)</td>
-						</tr>
-						<tr>
-							<td><img src="images/edge_logo.svg" style="height: 2em; width: 2em" alt="IE/Edge">IE/Edge</td>
-							<td><span title="Supported" class="almost-supported">•</span></td>
-							<td>"Priority: High — We intend to begin development soon."</td>
-						</tr>
-					</table>
+					<h1>Browser support</h1>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section  data-transition="fade-in fade-out">
@@ -818,15 +791,53 @@ now
 					</div>
 					<div class="goodvsbad">
 						<div style="flex: 1; margin: 0.2em;">
-							<pre class="hljs html fragment" data-fragment-index="2" style="display: inline-block;"><code>&lt;content select='[slot="App/name"]'&gt;</code></pre>
+							<pre class="hljs html fragment inline" data-fragment-index="2"><code>&lt;content select='[slot="App/name"]'&gt;</code></pre>
 						</div>
 						<div style="flex: 1; margin: 0.2em;">
-							<pre class="hljs html fragment" data-fragment-index="1" style="display: inline-block;"><code>&lt;slot="App/name"&gt;</code></pre>
+							<pre class="hljs html fragment inline" data-fragment-index="1"><code>&lt;slot name="App/name"&gt;</code></pre>
 						</div>
 					</div>
 					</table>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
+				<section>
+					<h2>Shadow DOM v1</h2>
+					<table class="browser-support">
+						<tr>
+							<td><img src="images/wc_logo.svg" style="height: 2em; width: 2em" alt="Chrome/Opera">Polyfill</td>
+							<td><span title="Supported" class="supported">✓</span></td>
+							<td>
+								by Google team, supports V0, V1 in development.<br/>
+								Supports all browsers below
+							</td></tr>
+							<tr>
+								<td><img src="images/Chrome-logo.png" style="height: 2em; width: 2em" alt="Chrome/Opera">Chrome</td>
+								<td><span title="Supported" class="supported">✓</span></td>
+								<td>V0 &amp; V1</td>
+							</tr>
+							<tr>
+								<td><img src="images/Opera_logo.png" style="height: 2em; width: 2em" alt="Chrome/Opera">Opera</td>
+								<td><span title="Supported" class="supported">✓</span></td>
+								<td>V0 &amp; V1</td>
+							</tr>
+							<tr>
+								<td><img src="images/firefox_logo.svg" style="height: 2em; width: 2em" alt="Firefox">Firefox</td>
+								<td><span title="Supported" class="almost-supported">•</span></td>
+								<td>⚑ behind the flag <code>dom.webcomponents.enabled</code></td>
+							</tr>
+							<tr>
+								<td><img src="images/webkit_logo.svg" style="height: 2em; width: 2em" alt="Webkit">Safari</td>
+								<td><span title="Supported" class="supported">✓</span></td>
+								<td>V1 (Safari 10)</td>
+							</tr>
+							<tr>
+								<td><img src="images/edge_logo.svg" style="height: 2em; width: 2em" alt="IE/Edge">IE/Edge</td>
+								<td><span title="Supported" class="almost-supported">•</span></td>
+								<td>"Priority: High — We intend to begin development soon."</td>
+							</tr>
+						</table>
+						<footer class="twitter">@tomalecpl</footer>
+					</section>
 			</section>
 
 

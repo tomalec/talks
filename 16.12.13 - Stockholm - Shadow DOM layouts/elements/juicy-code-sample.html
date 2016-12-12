@@ -152,21 +152,24 @@ version: 1.1.0
         const HIGHLIGHT_TOKEN = 'HIGHLIGHT-THIS';
         const HIGHLIGHT_TOKEN_END = 'HIGHLIGHT-THIS-END';
         // const HIGHLIGHT_PATTERN = /HIGHLIGHT-THIS&lt;([^ &]+)/g;
-        const HIGHLIGHT_PATTERN = /([ \t]+)HIGHLIGHT-THIS(.+)/g;
+        const HIGHLIGHT_PATTERN = /([ \t]*)HIGHLIGHT-THIS(.+)/g;
         const HIGHLIGHT_PATTERN_END = /HIGHLIGHT-THIS-END/g;
         function highlightOnly(range, html, marker){
             var elements = html.querySelectorAll('template')
 
-
-            Array.prototype.forEach.call(elements, marker);
+            if(elements.length){
+                Array.prototype.forEach.call(elements, marker);
+            } else {
+                marker(html);
+            }
 
             var wrapper = document.createElement('div');
             wrapper.appendChild(html);
-            debugger
+
             // return replaceHtmlEntities(wrapper.innerHTML).replace(HIGHLIGHT_PATTERN, '&lt;<span class="hljs-name">$1</span>');
             return replaceHtmlEntities(wrapper.innerHTML)
-                    .replace(HIGHLIGHT_PATTERN, '<span class="hljs-line">$1$2')
-                    .replace(HIGHLIGHT_PATTERN_END, '</span>');
+                    .replace(HIGHLIGHT_PATTERN_END, '</span>')
+                    .replace(HIGHLIGHT_PATTERN, '<span class="hljs-line">$1$2');
 
         }
 
@@ -189,15 +192,23 @@ version: 1.1.0
                 );
             },
             markSlots: function markSlots(element){
-                Array.prototype.forEach.call(
-                    element.content.querySelectorAll('[is="starcounter-composition"]'),
-                    function(composition){
-                        Array.prototype.forEach.call(
-                            composition.content.querySelectorAll('slot, content'),
-                            markElement
-                        );
-                    }
-                );
+                if(element.content){
+                    Array.prototype.forEach.call(
+                        element.content.querySelectorAll('[is="starcounter-composition"]'),
+                        function(composition){
+                            Array.prototype.forEach.call(
+                                composition.content.querySelectorAll('slot, content'),
+                                markElement
+                            );
+                        }
+                    );
+                } else {
+                    Array.prototype.forEach.call(
+                        element.querySelectorAll('slot, content'),
+                        markElement
+                    );
+                    debugger
+                }
             }
         }
         function markElement(element){

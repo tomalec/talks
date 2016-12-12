@@ -279,9 +279,11 @@ p.final-links {
     justify-content: center;
 }
 /* inline code blocks*/
-.hljs.inline{
+.reveal pre.hljs.inline,
+.reveal pre.hljs.inline code{
     display: inline-block;
     vertical-align: middle;
+    width: auto;
 }
 
 /** highlighting by line */
