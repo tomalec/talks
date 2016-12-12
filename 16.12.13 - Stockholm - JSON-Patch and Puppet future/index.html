@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html class="theme-font-montserrat theme-color-black-orange">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Future of JSON Patch &amp; Puppet</title>
+
+	<meta name="description" content="Future of JSON Patch &amp; Puppet / Starcounter Tech Day 2016, 14 December, Stockholm, Sweden">
+	<meta name="author" content="Tomek Wytrębowicz">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<link href="css/reveal.css" rel="stylesheet">
+	<link href="css/theme/night.css" rel="stylesheet">
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/theme_fixes.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="lib/css/material.css">
+	<!-- <link rel="stylesheet" href="lib/css/atom-one-dark.css"> -->
+
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<link rel="import" href="bower_components/polymer/polymer.html">
+</head>
+
+<body class="non-live-coding">
+
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<aside data-markdown class="notes">
+
+				</aside>
+				<header class="absolute-block" style="width: 800px; left: 80px; top: 70px; height: auto; text-align:left;">
+					<h1 style="text-align:left;">JSON Patch &amp; Puppet future</h1>
+					<p>
+						Tomek Wytrębowicz
+					</p>
+				</header>
+				<p class="absolute-block" style="width: 600px; left: 80px; top: 280px; z-index: 12; color: rgb(182, 182, 182); text-align: left;">
+				</p>
+				<p class="absolute-block" style="width: 198px; left: 762px; top: 549px; z-index: 13; text-align: left;">
+					<a href="http://twitter.com/tomalecpl" style="color: rgb(255, 255, 255); font-size:0.7em">@tomalecpl</a>
+				</p>
+				<img class="absolute-block" style="width: 42px; height: 42px; left: 720px; top: 588px; z-index: 14;" data-natural-width="900" data-natural-height="900" data-src="images/github.png">
+				<p class="absolute-block" style="width: 198px; left: 762px; top: 588px; z-index: 15; color: rgb(255, 255, 255); text-align: left;">
+					<a href="http://github.com/tomalec" style="color: rgb(255, 255, 255); font-size:0.7em">tomalec</a>
+				</p>
+				<img class="absolute-block" style="width: 40px; height: 40px; left: 722px; top: 548px; z-index: 16;" data-natural-width="300" data-natural-height="300" data-src="images/twitter-bird-dark-bgs.png">
+				<img class="absolute-block" style="width: 238px; height: 173.74px; left: 722px; top: 362.26px; z-index: 17;" data-natural-width="400" data-natural-height="292" data-src="images/StarcounterLogo__1_.png">
+
+				<footer class="absolute-block" style="left: 80px; bottom: 0; text-align: left;">
+					<small>
+						Starcounter Tech Day 2016, 14 December, Stockholm, Sweden
+					</small>
+					<!-- <a class="non-live-coding-hint" style="display: block; font-size: 60%;"
+					href="https://youtu.be/8xQWMf0NH_s?t=6m7s">
+					live-coding video: youtu.be/8xQWMf0NH_s
+					</a> -->
+				</footer>
+			</section>
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+
+					</aside>
+					<h1><code>fast-json-patch</code></h1>
+					<p><a href="https://tools.ietf.org/html/rfc6902">RFC6902</a></p>
+						<ul>
+							<li><img style="width: 1.6em; height: 1.6em; vertical-align: middle; margin: 0 0.2 em;" alt="Starcounter" data-natural-width="416" data-natural-height="416" data-src="images/Starcounter-logo.png"/> All apps</li>
+							<li><img style="width: 2em; height: 2em; vertical-align: middle;" data-natural-width="900" data-natural-height="900" data-src="images/github.png" alt="GitHub:"> 475 stars, 85 forks</li>
+							<li><img style="width: 2em;  vertical-align: middle;" data-natural-width="900" data-natural-height="900" data-src="images/npm-logo.png" alt="npm:"> <a href="https://www.npmjs.com/browse/depended/fast-json-patch">36 depending</a></li>
+							<li><img style="width: 2em;  vertical-align: middle;" data-natural-width="900" data-natural-height="900" data-src="images/bower-logo.png" alt="bower:"> <a href="https://libraries.io/bower/fast-json-patch/dependent-repositories">29 depending</a></li>
+						</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Faster JSON-Patch <span class="fragment" data-fragment-index="0">duplex</span></h1>
+					<ul>
+						<li>Remove browser dependencies (listeners, events, document)</li>
+						<li>Dirty-checking -> Proxy</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h2>Benefits</h2>
+					<ul>
+						<li>Performance</li>
+						<li>More sync., simpler, flow</li>
+						<li>x-platform</li>
+						<li>Node.js/server-side compatible
+							<ul>
+								<li>Starcounter x Node.js</li>
+								<li>shared code on both ends</li>
+								<li>wider community</li>
+							</ul>
+						</li>
+						<li>Easier tests</li>
+						<li>Easier bug reports &amp; tracking</li>
+						<li>Server-side Puppet.js</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>PuppetJS</h1>
+					<ol>
+						<li>Separate browser-related features</li>
+						<li>More symmetric peer-to-peer</li>
+						<li>n-to-n connections</li>
+					</ol>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h2>Separate browser-related features</h2>
+					<h3>Benefits</h3>
+					<ul>
+						<li>Simplified flow</li>
+						<li>Performance</li>
+						<li>Modularity</li>
+						<li>Maintenance</li>
+						<li>x-platform</li>
+						<li>Node.js/server-side compatible
+							<ul>
+								<li>wider community</li>
+							</ul>
+						</li>
+						<li>Easier tests</li>
+						<li>Easier bug reports &amp; tracking</li>
+						<li>More symmetric peer-to-peer</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h2>More symmetric peer-to-peer</h2>
+					<h3>Benefits</h3>
+					<ul>
+						<li>Shared code on both ends</li>
+						<li>Starcounter x Node.js</li>
+						<li>Better test-coverage</li>
+						<li>Easier maintenance</li>
+						<li>n-to-n connections</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h2>n-to-n connections</h2>
+					<p>experiment</p>
+					<h3>Benefits</h3>
+					<ul>
+						<li>Collaborating</li>
+						<li>Sharing view-model on multiple devices</li>
+						<li>Wider non-<img style="width: 1em; height: 1em;" alt="Starcounter" data-natural-width="416" data-natural-height="416" data-src="images/Starcounter-logo.png"/> adoption</li>
+						<li>..?..</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+
+			<section class="stack">
+				<section style="display: flex;">
+					<aside data-markdown class="notes">
+					</aside>
+					<h1 style="flex: 1;">
+						New name for PuppetJS
+					</h1>
+					<p>as a protocol / communication library</p>
+					<ul>
+						<li>It does not have to be JS specific</li>
+						<li>JSON is the thing common for many implementations</li>
+						<li>conflict with Marionettejs (Backbone)</li>
+						<li>conflict with <a href="https://puppet.com/">Puppet</a> - configuration menagement tool</li>
+						<li>Does not adhere to p2p (w/o master &amp; slave)</li>
+						<li>Does not adhere to n-to-n flow</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section style="display: flex;">
+					<aside data-markdown class="notes">
+					</aside>
+					<h2 style="flex: 1;">
+						New name for PuppetJS
+					</h2>
+					<small>as a protocol / communication library</small>
+					<p>
+						<a href="https://github.com/PuppetJs/PuppetJs/issues/83"><img style="width: 2em; height: 2em; vertical-align: middle;" data-natural-width="900" data-natural-height="900" data-src="images/github.png">PuppetJs/PuppetJs#83</a>
+					</p>
+					<ul>
+						<li>PuppetJSON</li>
+						<li>JSONPuppeteer</li>
+						<li>JSONPatcher</li>
+						<li>JSONMirror / JSONMirrors</li>
+						<li>?</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+
+
+
+
+			<section class="stack">
+				<section class="has-dark-background">
+					<aside data-markdown class="notes">
+## 26:20
+					</aside>
+					<h1 class="absolute-block" style="width: 800px; left: 80px; top: 69px; height: auto; color: rgb(255, 255, 255); font-size: 350%; text-align:left;">
+						Thanks!
+					</h1>
+					<p class="absolute-block" style="height: auto; width: 319px; left: 561px; top: 450px; z-index: 12; color: rgb(182, 182, 182); text-align: left;">
+						Tomek Wytrębowicz
+					</p>
+					<p class="absolute-block" style="height: 40px; left: 720px; top: 589px; font-size:0.7em;">
+						<img style="width: 40px; height: 40px; vertical-align: middle;" data-natural-width="900" data-natural-height="900" data-src="images/github.png"> tomalec
+					</p>
+					<p class="absolute-block" style="height: 40px; left: 720px; top: 548px; font-size:0.7em;">
+						<img style="width: 40px; height: 40px; vertical-align: middle;" data-natural-width="300" data-natural-height="300" data-src="images/twitter-bird-dark-bgs.png"> @tomalecpl
+					</p>
+					<img class="absolute-block" style="width: 80px; height: 58.4px; left: 880px; top: 431px;" data-natural-width="400" data-natural-height="292" data-src="images/StarcounterLogo__1_.png">
+				</section>
+				<section class="has-dark-background" data-background-color="#212121">
+					<div class="absolute-block" style="left: 0px; top: 153px; font-size: 80%;text-align:left;">
+						<p>Repos:</p>
+						<p class="final-links">fast-json-patch - <a href="https://github.com/Starcounter-Jack/JSON-Patch" target="_blank">github.com/Starcounter-Jack/JSON-Patch</a></p>
+						<p class="final-links">PuppetJS - <a href="https://github.com/PuppetJs/PuppetJs/" target="_blank">github.com/PuppetJs/PuppetJs/</a></p>
+						<p>This &amp; other talks:</p>
+						<p class="final-links"><a href="https://github.com/tomalec/talks" target="_blank">github.com/tomalec/talks/</a></p>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+		</div>
+	</div>
+
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+
+			transition: "slide", // none/fade/slide/convex/concave/zoom
+
+
+			mouseWheel: false,
+			showNotes: false,
+			slideNumber: null,
+			autoSlide: 0,
+			autoSlideStoppable: true,
+			rollingLinks: false,
+			center: false,
+			loop: false,
+			rtl: false,
+			backgroundTransition: "slide",
+			maxScale: 2,
+
+			dependencies: [
+				// { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, //condition: function() { return !!document.querySelector('pre code');},
+				// { src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+<script>
+	// wait for dom-binds
+	setTimeout(function(){
+		// pick all hints
+		document.querySelectorAll('.non-live-coding-hint > h3').forEach(function(element){
+			// enable toggling
+			element.addEventListener('click', function(){
+				element.nextElementSibling.classList.toggle('visible');
+			});
+		});
+	});
+</script>
+
+</html>
