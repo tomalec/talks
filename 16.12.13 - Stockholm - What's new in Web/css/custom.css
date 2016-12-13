@@ -1,0 +1,313 @@
+/** */
+.reveal .absolute-center{
+    position: absolute;
+    top: calc(50% - 0.5em);
+    text-align: center;
+    width: 100%;
+}
+.reveal h1.absolute-center, .reveal h6.absolute-center{
+    top: calc(50% - (1.3 * 0.5em));
+}
+pre.absolute-center{
+    top: calc(50% - (1.2 * 0.5em));
+}
+
+.reveal .absolute-block{
+    position: absolute;
+    display: block;
+    z-index: auto;
+}
+
+
+/* ----------------------- */
+
+.hljs {
+    /*overflow: hidden !important;*/
+}
+.hljs.html,
+table .hljs.js,
+table .hljs.css{
+     font-size: 75%;
+}
+
+footer.twitter {
+    position: absolute;
+    height: 40px;
+    min-width: 30px;
+    min-height: 30px;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    opacity: 0.2;
+    font-size: 0.7em;
+    line-height: 40px;
+    padding-left: 35px;
+    background: url("../images/twitter-bird-dark-bgs.png");
+    background-size: 40px 40px;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+}
+footer.hashtag {
+    position: absolute;
+    height: 40px;
+    min-width: 30px;
+    min-height: 30px;
+    right: 0;
+    bottom: 40px;
+    z-index: 11;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    opacity: 0.4;
+    font-size: 0.7em;
+    line-height: 40px;
+}
+
+footer.twitter2 {
+    position: absolute;
+    height: 40px;
+    min-width: 30px;
+    min-height: 30px;
+    right: 0;
+    bottom: 0;
+    z-index: 11;
+    color: rgb(255, 255, 255);
+    text-align: left;
+    opacity: 0.2;
+    font-size: 0.7em;
+    line-height: 40px;
+    padding-left: 35px;
+    background: url("../images/twitter-bird-dark-bgs.png");
+    background-size: 40px 40px;
+    background-position: 0 center;
+    background-repeat: no-repeat;
+}
+:not(ul).bad{
+    color: rgb(211, 47, 47);
+}
+ul.bad, ul.good, ul.starcounter-list  {
+   list-style: none;
+   padding:0;
+   margin:0;
+}
+
+.bad > li,
+.starcounter-list > li {
+   padding-left: 1em;
+   text-indent: -.7em;
+}
+
+.bad > li:before {
+   font-weight: bold;
+   content: "• ";
+   color: rgb(211, 47, 47);
+}
+
+ul.starcounter-list > li:before,
+li.starcounter-list:before {
+   font-weight: bold;
+   content: "• ";
+   color: #f47e0c;
+}
+
+:not(ul).good{
+color: rgb(106, 168, 79);
+}
+.good > li {
+   padding-left: 1em;
+   text-indent: -.7em;
+}
+
+.good > li:before {
+   font-weight: bold;
+   content: "• ";
+   color: rgb(106, 168, 79);
+}
+.good.ticks{
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+.good.ticks > li:before, .bad.ticks > li:before{
+    content: "✓ ";
+}
+.html.small{
+   font-size: 70%;
+}
+
+.reveal .resizable {
+    resize: both;
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.overlayed-list{
+    position: absolute;
+    z-index: 20;
+    width: calc(100% + 2em);
+    left: -1em;
+    background-color: rgba(22,22,22,0.8);
+}
+.totop{
+    height: 1em;
+}
+.totop + *{
+    transition: top 0.5s ease-in-out;
+}
+.reveal section .visible.totop + *{
+    top: 0 !important;
+}
+.toleft{
+    display: inline-flex;
+}
+.toleft:not(.visible){
+    width: 0;
+}
+.goodvsbad{
+    display: flex;
+     flex-flow:  row nowrap;
+    justify-content: space-around;
+    align-content: top;
+    align-items: flex-start;
+}
+.goodvsbad > ul{
+    /*border: 1px solid white;*/
+    flex: 1;
+}
+/* toggling */
+.non-live-coding .non-live-coding-hint h3{
+    cursor: pointer;
+}
+.non-live-coding .non-live-coding-hint > div{
+    display: none;
+}
+.non-live-coding .non-live-coding-hint > div.visible{
+    display: block;
+}
+/** end of hints */
+
+
+.reveal code {
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+
+/** browser-support*/
+.browser-support{
+    font-size: 80%;
+}
+.browser-support td:first-child{
+    text-align: left;
+    white-space: nowrap;
+}
+.browser-support td img{
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+.browser-support code{
+    display: inline-block;
+    vertical-align: middle;
+    color: #f8f8f2;
+    background: #282a36;
+}
+
+.browser-support .supported{
+    color: green;
+    /*font-size: 2em;
+    line-height: 1em;*/
+}
+.browser-support .almost-supported{
+    color: yellow;
+    /*font-size: 2em;
+    line-height: 1em;*/
+}
+
+/** */
+p.final-links {
+    margin-left: 80px;
+    font-size: 75%;
+}
+
+/* grids are everywhere */
+.image-to-grid{
+    position: absolute;
+    top:0;
+    display: grid;
+    width: 960px;
+    height: 700px;
+}
+.image-to-grid .image-to-grid{
+    position: static;
+    display: grid;
+    width: 100%;
+    height: 100%;
+}
+.image-to-grid > div{
+    border: 4px solid #e7ad52; /*#F2F4F5*/
+
+}
+.image-to-grid .image-to-grid > div{
+    border: 4px solid #AED2EC;
+}
+
+/** feature detection */
+.reveal section .feature-detection {
+    box-shadow: 0px 0px 10px 0px rgba(255, 0, 0, 0.75),
+                inset  0px 0px 10px 0px rgba(255, 0, 0, 0.75);
+    margin: 10px;
+    padding: 1em;
+    font-size: 80%;
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    text-align: left;
+}
+@supports( (display: grid) or (display: -ms-grid) ) {
+    .feature-detection {
+        display: none;
+    }
+}
+/** vertical alighn */
+.vertical-wrapper,
+.vertical-center-wrapper{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    position: relative;
+}
+.vertical-center-wrapper{
+    align-items: center;
+    justify-content: center;
+}
+/* inline code blocks*/
+.reveal pre.hljs.inline,
+.reveal pre.hljs.inline code{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+
+/** highlighting by line */
+
+
+code.lowlight span{
+    opacity: 0.5;
+}
+code.lowlight span.hljs-line,
+code.lowlight span.hljs-line span{
+    opacity: 1;
+}
+
+/** crossfading */
+.crossfading {
+    /*display: grid;*/
+    /*width: 100%;*/
+}
+.crossfading > *{
+    /*grid: 1/1;*/
+}
+
+.hide-invisible:not(.current-fragment){
+    display: none !important;
+}

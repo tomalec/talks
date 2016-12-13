@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html class="theme-font-montserrat theme-color-black-orange">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>What's new in the Web</title>
+
+	<meta name="description" content="What's new in the Web / Starcounter Tech Day 2016, 14 December, Stockholm, Sweden">
+	<meta name="author" content="Tomek Wytrębowicz">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<link href="css/reveal.css" rel="stylesheet">
+	<link href="css/theme/night.css" rel="stylesheet">
+
+	<link href="css/style.css" rel="stylesheet">
+	<link href="css/theme_fixes.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="lib/css/material.css">
+	<!-- <link rel="stylesheet" href="lib/css/atom-one-dark.css"> -->
+
+	<script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<link rel="import" href="bower_components/polymer/polymer.html">
+</head>
+
+<body class="non-live-coding">
+
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<aside data-markdown class="notes">
+
+				</aside>
+				<header class="absolute-block" style="width: 800px; left: 80px; top: 70px; height: auto; text-align:left;">
+					<h1 style="text-align:left;">What's new in the Web</h1>
+					<p>
+						Tomek Wytrębowicz
+					</p>
+				</header>
+				<p class="absolute-block" style="width: 600px; left: 80px; top: 280px; z-index: 12; color: rgb(182, 182, 182); text-align: left;">
+				</p>
+				<p class="absolute-block" style="width: 198px; left: 762px; top: 549px; z-index: 13; text-align: left;">
+					<a href="http://twitter.com/tomalecpl" style="color: rgb(255, 255, 255); font-size:0.7em">@tomalecpl</a>
+				</p>
+				<img class="absolute-block" style="width: 42px; height: 42px; left: 720px; top: 588px; z-index: 14;" data-natural-width="900" data-natural-height="900" data-src="images/github.png">
+				<p class="absolute-block" style="width: 198px; left: 762px; top: 588px; z-index: 15; color: rgb(255, 255, 255); text-align: left;">
+					<a href="http://github.com/tomalec" style="color: rgb(255, 255, 255); font-size:0.7em">tomalec</a>
+				</p>
+				<img class="absolute-block" style="width: 40px; height: 40px; left: 722px; top: 548px; z-index: 16;" data-natural-width="300" data-natural-height="300" data-src="images/twitter-bird-dark-bgs.png">
+				<img class="absolute-block" style="width: 238px; height: 173.74px; left: 722px; top: 362.26px; z-index: 17;" data-natural-width="400" data-natural-height="292" data-src="images/StarcounterLogo__1_.png">
+
+				<footer class="absolute-block" style="left: 80px; bottom: 0; text-align: left;">
+					<small>
+						Starcounter Tech Day 2016, 14 December, Stockholm, Sweden
+					</small>
+					<!-- <a class="non-live-coding-hint" style="display: block; font-size: 60%;"
+					href="https://youtu.be/8xQWMf0NH_s?t=6m7s">
+					live-coding video: youtu.be/8xQWMf0NH_s
+					</a> -->
+				</footer>
+			</section>
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+
+					</aside>
+					<h1>Web Components</h1>
+						<ul>
+							<li><code>&lt;template&gt;</code></li>
+							<li>Shadow DOM</li>
+							<li>Custom Elements</li>
+							<li>HTML Imports</li>
+						</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1><code>&lt;template&gt;</code></h1>
+					<ul>
+						<li>W3C Recommendation</li>
+						<li>Part of HTML 5.1</li>
+						<li>Browser support:</li>
+					</ul>
+					<p class="fragment" data-fragment-index="0"><img src="images/caniuse-templates.png"/></p>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Shadow DOM</h1>
+					<ul>
+						<li>All browser vendors agreed</li>
+						<li>.. on V1</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Shadow DOM V1</h1>
+					<p style="text-align: left;">What's New in Shadow DOM v1 (by examples) <a href="https://hayato.io/2016/shadowdomv1/">hayato.io/2016/shadowdomv1/</a> by Hayato Ito - spec editor, Chromium dev</p>
+					<table>
+						<tr>
+							<th>V0</th><th>V1</th>
+						</tr>
+						<tr>
+							<td>
+								<pre class="html inline hljs"><code>&lt;content select=".css[selector]"&gt;</code></pre>
+							</td>
+							<td>
+								<pre class="html inline hljs"><code>&lt;slot name="my-name"&gt;</code></pre> +
+								<pre class="html inline hljs"><code>&lt;div slot="my-name"&gt;</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<pre class="js inline hljs"><code>element.createShadowRoot();</code></pre>
+							</td>
+							<td>
+								<pre class="js inline hljs"><code>element.attachShadow({ mode: 'open' });</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td>
+
+								<pre class="js hljs"><code>let olderShadowRoot = e.createShadowRoot();
+let youngerShadowRoot = e.createShadowRoot(); </code></pre>
+							</td>
+							<td>
+								Multiple shadow roots per element - not supported
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Fallback content - not supported
+							</td>
+							<td>
+								<pre class="html hljs"><code>&lt;slot name='slot2'&gt;
+  &lt;div id='fallback2'&gt;&lt;/div&gt;
+&lt;/slot&gt;</code></pre>
+
+							</td>
+						</tr>
+					</table>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Shadow DOM V1</h1>
+					<p style="text-align: left;">What's New in Shadow DOM v1 (by examples) <a href="https://hayato.io/2016/shadowdomv1/">hayato.io/2016/shadowdomv1/</a> by Hayato Ito - spec editor</p>
+					<table>
+						<tr>
+							<th>V0</th><th>V1</th>
+						</tr>
+						<tr>
+							<td>
+								<pre class="css inline hljs"><code>#element::content .selector</code></pre>
+							</td>
+							<td>
+								<pre class="css inline hljs"><code>#element::slotted(.selector)</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<pre class="css inline hljs"><code>#element /deep/ .selector</code></pre>
+							</td>
+							<td>
+								Deprecated
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+								<pre class="html inline hljs"><code>&lt;slot&gt;</code></pre> becomes a scope of sequential focus navigation.
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+								new methods and utilities: <code class="hljs js">slot.assignedNodes(), Element.assignedSlot, Node.isConnected, Node.getRootNode(options)</code>
+							</td>
+						</tr>
+					</table>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Custom Elements</h1>
+					<ul>
+						<li>All browser vendors agreed</li>
+						<li>.. on V1 - again</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h2>Custom Elements v1</h2>
+					<p style="text-align: left;">Reintroducing Custom Elements V1 <a href="https://www.webreflection.co.uk/blog/2016/08/21/custom-elements-v1">webreflection.co.uk/blog/2016/08/21/custom-elements-v1</a> by Andrea Giammarchi - author of CEv1 polyfill</p>
+					<table>
+						<tr>
+							<th>V0</th><th>V1</th>
+						</tr>
+						<tr>
+							<td>
+								<pre class="js inline hljs"><code>document.registerElement('my-element', prototype);</code></pre>
+							</td>
+							<td>
+								<pre class="js inline hljs"><code>customElements.define('my-element', Class);</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<pre class="js hljs"><code>document.registerElement('my-element', {
+	/*...*/,
+	extends: 'button'
+});</code></pre>
+							</td>
+							<td>
+								<pre class="js hljs"><code>customElements.define('my-element',
+	class extends HTMLButtonElement {
+		/*...*/
+	},
+	{extends: 'button'}
+);</code></pre>
+							</td>
+						</tr>
+					</table>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h2>Custom Elements V1</h2>
+					<table>
+						<tr>
+							<th>V0</th><th>V1</th>
+						</tr>
+						<tr>
+							<td>
+								<pre class="js inline hljs"><code>createdCallback = function(){/*...*/}</code></pre>
+							</td>
+							<td>
+								<pre class="js inline hljs"><code>constructor(){ super(); /*...*/}</code></pre><br/>
+Doing any DOM related changes in <code>constructor</code> are strongly discouraged!
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<pre class="js inline hljs"><code>attachedCallback</code></pre><br/>
+								<pre class="js inline hljs"><code>detachedCallback</code></pre>
+							</td>
+							<td>
+								<pre class="js inline hljs"><code>connectedCallback</code></pre><br/>
+								<pre class="js inline hljs"><code>disconnectedCallback</code></pre>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<pre class="js inline hljs"><code>attributeChangedCallback</code></pre> observed every attribute
+							</td>
+							<td>
+								observes only attributes declated in
+								<pre class="js hljs"><code>static get observedAttributes() {
+    return ['attrName'];
+}</code></pre>
+							</td>
+						</tr>
+					</table>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h2>Custom Elements <pre class="inline hljs"><code class="">is="v1"</code></pre></h2>
+					<ul>
+						<li>Safari will not ship <pre class="inline hljs"><code>is</code></pre> in V1</li>
+						<li>Other vendors will</li>
+						<li>It's still in spec</li>
+						<li>It's still in polyfill</li>
+					</ul>
+
+
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>HTML Imports</h1>
+					<ul>
+						<li>Spec is on hold</li>
+						<li>Polyfills are still supported</li>
+						<li>Easy to polyfill</li>
+						<li>W3C wants to provide such feature</li>
+						<li>... in cleaner form</li>
+						<li>... co-op with ES6 modules</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+
+			</section>
+
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Polymer 2.0</h1>
+					<ul>
+						<li>Preview available</li>
+						<li>Build on top of WebComponents v1</li>
+						<li>Hybrid mode</li>
+						<li>1.7 is forward compat. w/ V1</li>
+						<li>Data-binding is claimed to be fixed</li>
+						<li>
+							Does not use <pre class="hljs inline html"><code>is</code></pre>
+							(<pre class="hljs inline html"><code>&lt;dom-bind&gt;</code></pre>)
+						</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+
+			</section>
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Migrations</h1>
+					<ul>
+						<li>Polymer elements via:
+							<pre><code>1.7->Hybrid->2.0</code></pre>
+							<p>Hybrid should work with 1.7, 2.0, v0 and v1</p>
+						</li>
+						<li>Vanilla elements
+							<ul>
+								<li>Chrome runs v0 &amp; v1</li>
+								<li>Polyfilled CE - Andrea's <pre class="hljs inline">document-register-element</code></pre> should make v0 &amp; v1 run side by side</li>
+								<li>Polyfilled SD - ? </li>
+							</ul>
+						</li>
+						<li>SC will update WC.js@v1 &amp; Polymer@2.0 only after all our elements will be ready</li>
+						<li>... it will be available at branch/flag/upgrade appl</li>
+					</ul>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+
+			</section>
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Custom (CSS) Properites</h1>
+					<p>Editor’s Draft, 13 December 2016</p>
+					<ul>
+						<li>CSS variables</li>
+						<li>Styling Custom Elements</li>
+					</ul>
+					<pre class="html fragment hide-invisible" data-fragment-index="0"><code># my-element's Shadow DOM
+<style>
+:host{
+  --my-element-title-color: red;
+}
+.title {
+  color: var(--my-element-title-color);
+}
+</style>
+<h3 class="title">I'm a .title from Shadow DOM</h3>
+</code></pre>
+					<pre class="html fragment" data-fragment-index="1"><code><style>
+  .some-class{
+    --my-element-title-color: blue;
+  }
+</style>
+<my-element class="some-class"></my-element>
+</code></pre>
+					<footer style="text-align: right;"><a href="http://jsbin.com/xiyezi/3/edit?html,output">jsbin.com/xiyezi/</a></footer>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1><pre class="hljs inline css"><code>::part()</code></pre></h1>
+					<p>idea in W3C WebPlatform WG</p>
+					<p><a href="https://github.com/w3c/webcomponents/issues/300">github.com/w3c/webcomponents/issues/300</a></p>
+					<ul>
+						<li>Custom pseudo-element selector</li>
+						<li>SD (CE) exposing API for styling it's shadow children</li>
+					</ul>
+					<pre class="html"><code>&lt;date-range-selector&gt;
+  &lt;!-- #shadow-root --&gt;
+    &lt;div id="container"&gt;
+      &lt;input part="start-date" id="start-date" type="date"&gt;
+    &lt;/div&gt;
+  &lt;!-- /shadow-root --&gt;
+&lt;/date-range-selector&gt;</code></pre>
+					<pre class="css"><code>date-range-selector::part(start-date){
+  /* normal styles */
+}</code></pre>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+
+			</section>
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>Custom (HTML) Attributes</h1>
+					<p>idea at W3C WebPlatform WG issues</p>
+					<ul>
+						<li>Addresses <code>is</code> issue</li>
+						<li>Mixins for HTML Elements</li>
+					</ul>
+					<pre class="js"><code>class FooBarAttr {
+  attachedCallback() {
+    console.log('was created for first time');
+  }
+
+  changedCallback(newValue, oldValue) {
+    console.log('it changed');
+  }
+}
+customAttributes.define('foo-bar', FooBarAttr);
+</code></pre>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+
+			</section>
+
+
+			<section class="stack">
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>CSS Grid Layout</h1>
+					<p>THE Way to create layouts</p>
+					<p>See my presenation from Meet.js Summit 2016</p>
+					<div style="display: flex; justify-content: space-between;">
+						<a href="http://tomalec.github.io/talks/16.03.19%20-%20Warsaw%20-%20CSS%20Grid%20Layout%20-%20the%20only%20grid%20framework%20you%20need%20to%20know">
+							tomalec.github.io/talks
+						</a>
+
+						<a href="https://youtu.be/8xQWMf0NH_s?list=UU2aX7cPDv8Stij0kBCM_qgg">youtu.be/8xQWMf0NH_s</a>
+					</div>
+
+					<div class="fragment hide-invisible" data-fragment-index="0">
+						<h4>Page layout</h4>
+						<pre class="css"><code>.fb-layout {
+  display: grid;
+  grid: "head head"   3em
+        "nav  subnav" auto
+        "nav  main"   1fr
+        "foot foot"
+       / 5em 1fr;
+}</code></pre>
+					</div>
+					<div class="fragment hide-invisible" data-fragment-index="1">
+						<h4>CSS Grid Framework, srsly?</h4>
+						<pre class="css"><code>.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}</code></pre>
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h1>CSS Grid Layout</h1>
+					<table class="browser-support">
+						<tr>
+							<td><img src="images/w3c-logo.png" style="height: 2em; width: 2em" alt="W3C-logo">W3C</td>
+							<td><span title="Supported" class="supported">✓</span></td>
+							<td>
+							</td></tr>
+							<tr>
+								<td><img src="images/Chrome-logo.png" style="height: 2em; width: 2em" alt="Chrome">Chrome</td>
+								<td><span title="Supported" class="supported">✓</span></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><img src="images/Opera_logo.png" style="height: 2em; width: 2em" alt="Opera">Opera</td>
+								<td><span title="Supported" class="supported">✓</span></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><img src="images/firefox_logo.svg" style="height: 2em; width: 2em" alt="Firefox">Firefox</td>
+								<td><span title="Supported" class="supported">✓</span></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><img src="images/safari_tp-logo.png" style="height: 2em; width: 2em" alt="Webkit">Safari TP</td>
+								<td><span title="Supported" class="almost-supported">•</span></td>
+								<td>⚑ behind the flag</td>
+							</tr>
+							<tr>
+								<td><img src="images/edge_logo.svg" style="height: 2em; width: 2em" alt="IE/Edge">IE/Edge</td>
+								<td><span title="Supported" class="almost-supported">•</span></td>
+								<td>Old spec supported for years. <br/>"High priority" for upgrade</td>
+							</tr>
+						</table>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+
+			</section>
+
+
+
+
+
+
+
+
+
+
+
+			<section class="stack">
+				<section class="has-dark-background">
+					<aside data-markdown class="notes">
+					</aside>
+					<h1 class="absolute-block" style="width: 800px; left: 80px; top: 69px; height: auto; color: rgb(255, 255, 255); font-size: 350%; text-align:left;">
+						Thanks!
+					</h1>
+					<p class="absolute-block" style="height: auto; width: 319px; left: 561px; top: 450px; z-index: 12; color: rgb(182, 182, 182); text-align: left;">
+						Tomek Wytrębowicz
+					</p>
+					<p class="absolute-block" style="height: 40px; left: 720px; top: 589px; font-size:0.7em;">
+						<img style="width: 40px; height: 40px; vertical-align: middle;" data-natural-width="900" data-natural-height="900" data-src="images/github.png"> tomalec
+					</p>
+					<p class="absolute-block" style="height: 40px; left: 720px; top: 548px; font-size:0.7em;">
+						<img style="width: 40px; height: 40px; vertical-align: middle;" data-natural-width="300" data-natural-height="300" data-src="images/twitter-bird-dark-bgs.png"> @tomalecpl
+					</p>
+					<img class="absolute-block" style="width: 80px; height: 58.4px; left: 880px; top: 431px;" data-natural-width="400" data-natural-height="292" data-src="images/StarcounterLogo__1_.png">
+				</section>
+				<section class="has-dark-background" data-background-color="#212121">
+					<div class="absolute-block" style="left: 0px; top: 153px; font-size: 80%;text-align:left;">
+						<p>Specs:</p>
+						<p class="final-links">Template (HTML5.1)- <a href="https://www.w3.org/TR/html51/semantics-scripting.html#the-template-element" target="_blank">www.w3.org/TR/html51</a></p>
+						<p class="final-links">Shadow DOM - <a href="http://w3c.github.io/webcomponents/spec/shadow/" target="_blank">w3c.github.io/webcomponents/spec/shadow/</a></p>
+						<p class="final-links">Custom Elements - <a href="http://w3c.github.io/webcomponents/spec/custom/" target="_blank">w3c.github.io/webcomponents/spec/custom/</a></p>
+						<p class="final-links">HTML Imports - <a href="http://w3c.github.io/webcomponents/spec/imports/" target="_blank">w3c.github.io/webcomponents/spec/imports/</a></p>
+						<p>Other:</p>
+						<p class="final-links"><code>is</code> related issue at W3C - <a href="https://github.com/w3c/webcomponents/issues/509" target="_blank">github.com/w3c/webcomponents/issues/509</a></p>
+						<p>This &amp; other talks:</p>
+						<p class="final-links"><a href="https://github.com/tomalec/talks" target="_blank">github.com/tomalec/talks/</a></p>
+
+					</div>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+			</section>
+		</div>
+	</div>
+
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+
+			transition: "slide", // none/fade/slide/convex/concave/zoom
+
+
+			mouseWheel: false,
+			showNotes: false,
+			slideNumber: null,
+			autoSlide: 0,
+			autoSlideStoppable: true,
+			rollingLinks: false,
+			center: false,
+			loop: false,
+			rtl: false,
+			backgroundTransition: "slide",
+			maxScale: 2,
+
+			dependencies: [
+				// { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, //condition: function() { return !!document.querySelector('pre code');},
+				// { src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+<script>
+	// wait for dom-binds
+	setTimeout(function(){
+		// pick all hints
+		document.querySelectorAll('.non-live-coding-hint > h3').forEach(function(element){
+			// enable toggling
+			element.addEventListener('click', function(){
+				element.nextElementSibling.classList.toggle('visible');
+			});
+		});
+	});
+</script>
+
+</html>
