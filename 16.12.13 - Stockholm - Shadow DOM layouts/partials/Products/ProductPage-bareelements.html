@@ -1,0 +1,11 @@
+<h2>Person details</h2>
+<label>First name:</label>
+<input value="{{model.FirstName$::change}}" placeholder="First name"/>
+
+<label>Last name:</label>
+<input value="{{model.LastName$::change}}" placeholder="Last name"/>
+
+<button onclick="++this.value;" value="{{model.Save$::click}}">Save</button>
+<button onclick="++this.value;" value="{{model.Cancel$::click}}">Cancel</button>
+
+<link is="puppet-redirect" history url="{{model.RedirectUrl$}}" />

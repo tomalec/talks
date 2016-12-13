@@ -185,6 +185,18 @@ version: 1.1.0
                     }
                 });
             },
+            markMeaningful: function markMeaningful(element){
+                let fragment = element.content ? element.content : element;
+                Array.prototype.forEach.call(fragment.children, function(child){
+                    if(child.hasAttribute('slot')){
+                        console.log('')
+                        child.removeAttribute('slot');
+                        markElement(child);
+                    } else if(child.children){
+                        markMeaningful(child);
+                    }
+                });
+            },
             markComposition: function markComposition(element){
                 Array.prototype.forEach.call(
                     element.content.querySelectorAll('[is="starcounter-composition"]'),
@@ -207,7 +219,6 @@ version: 1.1.0
                         element.querySelectorAll('slot, content'),
                         markElement
                     );
-                    debugger
                 }
             }
         }

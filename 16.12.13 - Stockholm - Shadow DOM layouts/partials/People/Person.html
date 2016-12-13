@@ -1,0 +1,48 @@
+<template>
+    <h2 slot="People/heading">Person details</h2>
+    <template is="dom-bind">
+        <label slot="People/first-name-label">First name:</label>
+        <input slot="People/first-name-control" type="text" value="{{model.FirstName$::change}}" placeholder="First name"/>
+
+        <label slot="People/last-name-label">Last name:</label>
+        <input slot="People/last-name-control" type="text" value="{{model.LastName$::change}}" placeholder="Last name"/>
+
+        <button slot="People/save" onclick="++this.value;" value="{{model.Save$::click}}">Save</button>
+        <button slot="People/cancel" onclick="++this.value;" value="{{model.Cancel$::click}}">Cancel</button>
+
+        <link is="puppet-redirect" history url="{{model.RedirectUrl$}}" />
+    </template>
+    <template is="starcounter-composition">
+        <style>
+            .people-card{
+                /* ... */
+            }
+        </style>
+        <div class="people-card">
+            <div class="people-heading">
+                <content select="[slot='People/heading']"></content>
+                <div class="people-toolbar__item people-save">
+                    <content select="[slot='People/save']"></content>
+                </div>
+                <div class="people-toolbar__item">
+                    <content select="[slot='Images/add']"></content>
+                </div>
+                <div class="people-toolbar__item">
+                    <content select="[slot='People/cancel']"></content>
+                </div>
+            </div>
+            <div id="composed-thumbs">
+                <content select="[slot='Images/big']"></content>
+                <div style="width: 5em;">
+                    <content select="[slot='Images/thumbnail']"></content>
+                </div>
+            </div>
+            <div class="people-form">
+                <content select="[slot='People/first-name-label']"></content>
+                <content select="[slot='People/first-name-control']"></content>
+                <content select="[slot='People/last-name-label']"></content>
+                <content select="[slot='People/last-name-control']"></content>
+             </div>
+        </div>
+    </template>
+</template>

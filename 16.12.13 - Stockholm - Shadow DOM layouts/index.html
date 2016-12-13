@@ -130,10 +130,10 @@ Imagine that we have two apps developed independently (in the examples I'll use 
 They both uses Starcounter, but were created without any knowledge of each other, and they were carefully designed to look pretty when run standalone. -->
 					</aside>
 					<h1>Overview</h1>
-					<pre>
-
-[Two apps side by side]
-</pre>
+					<div style="display: flex;justify-content: center;align-items: center;">
+						<img src="images/partials/People_standalone.png"/>
+						<img src="images/partials/Images-standalone.png"/>
+					</div>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
@@ -145,9 +145,7 @@ sometimes even worse than 2 windows
 <!-- As you can see, puting the UI of one bellow another does not give you the feeling of working in the same scrren.
 It sometimes even worse than working in two different windows, as you need to scroll to se both results. -->
 					</aside>
-					<pre>
-One bellow another
-</pre>
+					<img src="images/partials/Merged-stacked.png"/>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
@@ -155,9 +153,7 @@ One bellow another
 Expect misex UI els composed closer to each other
 <!-- You woudl rather expect to get the mixed UI elements to get composed closer to each other. -->
 					</aside>
-					<pre>
-Blended
-</pre>
+					<img src="images/partials/Merged-composed.png"/>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 			</section>
@@ -234,9 +230,7 @@ But the key actor here is the shadow dom
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
-					<h3>In example</h3>
-					pictures not code!
-<pre>
+					<aside data-markdown class="notes">
 App dev exposes meaningful HTML elements his/her
 app delivers for given page or partial
 (blending works nested on any depth of HTML tree).
@@ -249,13 +243,26 @@ And delivers the composition in which they are layed out in first place
 
 They can use anythig browser gives to prepare this composiiotn as usuall,
 they only need to mark slots and the meningfull content - and do it in the way given by Web Standards.
-</pre>
+					</aside>
+					<h3>In example</h3>
+
+
+					<img src="images/partials/People_standalone-bare-elements.png" class="fragment hide-invisible" data-fragment-index="0"/>
+					<!-- <pre class="hljs html fragment hide-invisible" data-fragment-index="0"><template is="juicy-code-sample" content="./partials/Products/ProductPage-bareelements.html" unsafe></template></pre> -->
+
+					<img src="images/partials/People_standalone_composition.png" class="fragment hide-invisible" data-fragment-index="1"/>
+
+					<img src="images/partials/People_standalone-composition-slots.png" class="fragment hide-invisible" data-fragment-index="2"/>
+					<img src="images/partials/People_standalone-elements.png" class="fragment hide-invisible" data-fragment-index="3"/>
+
+
+					<img src="images/partials/People_standalone.png" class="fragment hide-invisible" data-fragment-index="10"/>
+
 					<footer class="hashtag"><a href="https://twitter.com/search?q=%23UseThePlatform">#UseThePlatform</a></footer>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
-					<h3>In example</h3>
-<pre>
+					<aside data-markdown class="notes">
 If both apps did the same,
 [pic with two apps side by side with rectangles around elements]
 when mixing them together we can keep those meaningfull elements from both,
@@ -264,9 +271,34 @@ then replace just the layout composition, with something new, more applicable to
 [Pic of new composition with blank slots]
 and the content will be distributed again natively by the browser.
 [slots fades out]
+					</aside>
+					<h3>In example</h3>
+					<div style="display: flex; width: 100%; justify-content: space-around;">
+						<div>
+							<h4>App A</h4>
+							<img src="images/partials/People_standalone-bare-elements.png" class="fragment hide-invisible" data-fragment-index="0"/>
+							<!-- <pre class="hljs html fragment hide-invisible" data-fragment-index="0"><template is="juicy-code-sample" content="./partials/Products/ProductPage-bareelements.html" unsafe></template></pre> -->
 
+							<img src="images/partials/People_standalone_composition.png" class="fragment hide-invisible" data-fragment-index="1"/>
 
-</pre>
+						</div>
+						<div>
+							<h4>App B</h4>
+							<img src="images/partials/Images-standalone-bare-elements.png" class="fragment hide-invisible" data-fragment-index="0"/>
+							<!-- <pre class="hljs html fragment hide-invisible" data-fragment-index="0"><template is="juicy-code-sample" content="./partials/Products/ProductPage-bareelements.html" unsafe></template></pre> -->
+
+							<img src="images/partials/Images-standalone-composition.png" class="fragment hide-invisible" data-fragment-index="1"/>
+
+						</div>
+					</div>
+					<div style="">
+						<div class="fragment" data-fragment-index="3">
+							<h4>Apps A x B</h4>
+							<img src="images/partials/Merged-bare-elements.png" class="fragment hide-invisible" data-fragment-index="3"/>
+							<img src="images/partials/Merged-composition.png" class="fragment hide-invisible" data-fragment-index="4"/>
+							<img src="images/partials/Merged-composed.png" class="fragment hide-invisible" data-fragment-index="6"/>
+						</div>
+					</div>
 					<footer class="hashtag"><a href="https://twitter.com/search?q=%23UseThePlatform">#UseThePlatform</a></footer>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
@@ -345,7 +377,10 @@ we don't impose
 				<section>
 					<aside data-markdown class="notes">
 					</aside>
-					<h3 class="absolute-center">Insertion point</h3>
+					<div class="vertical-center-wrapper">
+						<h3>Insertion point</h3>
+						<pre class="html inline hljs"><code>&lt;starcounter-include/&gt;</code></pre></h3>
+					</div>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 			</section>
@@ -385,9 +420,10 @@ That is also the place when entire layout related HTML structure and css rules w
 
 						<h3>Default compositions</h3>
 						<p>Given with the partial's HTML code</p>
-						[przyklad ze starcounter composition - code side by side a apką]
 						<div class="crossfading" style="flex: 1;">
-							<pre class="hljs html  notcurrent-hide" data-fragment-index="0"><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" unsafe></template></pre>
+							<pre class="hljs html fragment hide-invisible" data-fragment-index="0"><template is="juicy-code-sample" content="./partials/People/Person.html" unsafe></template></pre>
+							<pre class="hljs html fragment hide-invisible" data-fragment-index="1"><template is="juicy-code-sample" content="./partials/People/Person.html" lowlight="markDirectChildren"></template></pre>
+							<pre class="hljs html fragment hide-invisible" data-fragment-index="2"><template is="juicy-code-sample" content="./partials/People/Person.html" lowlight="markComposition"></template></pre>
 						</div>
 
 						<div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
@@ -414,23 +450,33 @@ Untangle functional els
 					<p>Migrate old-school code</p>
 					<div class="absolute-center fragment current-visible" data-fragment-index="0">As simple in code as it looks in pictures</div>
 					<div style="display: flex;">
-						<div style="width: 50%;" class="crossfading">
+						<div style="width: 50%; position: relative;" class="crossfading">
+							<img src="images/partials/People_standalone-elements.png" class="fragment hide-invisible" data-fragment-index="2"
+							style="width: 5em;
+							position: absolute;
+							top: -2em;
+							left: -3em;"/>
 							<div class="fragment" data-fragment-index="2">identify functional elements</div>
 <pre class="html hljs fragment current-visible hide-invisible" data-fragment-index="1"
- ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" unsafe></template></pre>
-<pre class="html hljs fragment " data-fragment-index="2"
-><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markDirectChildren"></template></pre>
+ ><template is="juicy-code-sample" content="./partials/People/Person-old.html" unsafe></template></pre>
+<pre class="html hljs fragment" data-fragment-index="2"
+><template is="juicy-code-sample" content="./partials/People/Person-old.html" lowlight="markMeaningful"></template></pre>
 						</div>
-						<div style="width: 50%;">
+						<div style="width: 50%; position: relative;">
+							<img src="images/partials/People_standalone_composition.png" class="fragment hide-invisible" data-fragment-index="6"
+								style="width: 5em;
+								position: absolute;
+								top: -2em;
+								right: -3em;"/>
 							<div class="fragment" data-fragment-index="6">move the rest into composition</div>
 						   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="5"
-						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage-bare.html" lowlight="markDirectChildren"></template></pre>
+						   ><template is="juicy-code-sample" content="./partials/People/Person-elements.html" lowlight="markDirectChildren"></template></pre>
 						   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="6"
-						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markComposition"></template></pre>
+						   ><template is="juicy-code-sample" content="./partials/People/Person.html" lowlight="markComposition"></template></pre>
 						   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="7"
-						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markSlots"></template></pre>
+						   ><template is="juicy-code-sample" content="./partials/People/Person.html" lowlight="markSlots"></template></pre>
 						   <pre class="html hljs fragment" data-fragment-index="10"
-						   ><template is="juicy-code-sample" content="./partials/Products/ProductPage.html" lowlight="markComposition"></template></pre>
+						   ><template is="juicy-code-sample" content="./partials/People/Person.html" lowlight="markComposition"></template></pre>
 					</div>
 					<div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
 						<ul class="good ticks">
@@ -513,22 +559,23 @@ we now receive functional elements separated from layout.
 Then we can safely change the layout composition without touching those elements. -->
 					</aside>
 					<h3>Merged partial</h3>
-					<pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="0">[Pic of many apps on the same screen stacked]</pre>
+
+					<img src="images/partials/Merged-stacked.png" class="fragment hide-invisible" data-fragment-index="0"/>
 
 				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="1"
-				   ><template is="juicy-code-sample" content="./partials/Merged.html" lowlight="markDirectChildren"></template></pre>
+				   ><template is="juicy-code-sample" content="./partials/People-Images/Merged.html" lowlight="markDirectChildren"></template></pre>
 				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="2"
-				   ><template is="juicy-code-sample" content="./partials/Merged.html" lowlight="markComposition"></template></pre>
+				   ><template is="juicy-code-sample" content="./partials/People-Images/Merged.html" lowlight="markComposition"></template></pre>
 					<div class="fragment current-visible hide-invisible " data-fragment-index="3">
 						Replace defaults with:
 					   <pre class="sql hljs"
 				   >SELECT * FROM HTMLComposition WHERE Key = ""</pre>
 			   		</div>
 				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="4"
-				   ><template is="juicy-code-sample" content="./partials/MergedComposition.html" unsafe></template></pre>
+				   ><template is="juicy-code-sample" content="./partials/People-Images/MergedComposition.html" unsafe></template></pre>
 				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="5"
-				   ><template is="juicy-code-sample" content="./partials/MergedComposition.html" lowlight="markSlots"></template></pre>
-				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="6">[Integrated]</pre>
+				   ><template is="juicy-code-sample" content="./partials/People-Images/MergedComposition.html" lowlight="markSlots"></template></pre>
+   					<img src="images/partials/Merged-composed.png" class="fragment hide-invisible" data-fragment-index="6"/>
 
 				   <div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
 					   <ul class="good ticks">
@@ -733,7 +780,6 @@ now
 						<li>base the knowledge on entire echosystem</li>
 						<li>profiles to your needs</li>
 					</ul>
-					<pre>[gif/iframe w/ example]</pre>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 
@@ -755,7 +801,6 @@ now
 						<li>explicit slot names</li>
 						<li>do not use default slot in default compositions</li>
 					</ul>
-					<pre>[gif/iframe w/ example]</pre>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 			</section>

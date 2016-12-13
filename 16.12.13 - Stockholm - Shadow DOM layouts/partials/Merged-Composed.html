@@ -1,0 +1,74 @@
+<style>
+            .people-card{
+                @apply --people-card;
+            }
+            .people-heading {
+                padding: 1.6em;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                border-bottom: 1px solid #e8e8e8;
+                justify-content: space-between;
+            }
+            .people-heading ::content > h2{
+                margin: 0;
+                margin-right: 2em;
+            }
+
+            .people-toolbar__item ::content button{
+                @apply --people-button;
+            }
+            .people-save ::content > button{
+                background: rgb(33, 150, 243);
+                color: white;
+            }
+            .people-form {
+                padding: 1.6em;
+                display: grid;
+                grid-template-columns: minmax(75px, min-content) minmax(75px, 1fr);
+                grid-column-gap: 20px;
+            }
+            .people-form ::content > input{
+                width: 100%;
+            }
+            #composed-thumbs{
+                display: grid;
+                grid-template-columns: 1fr 5em;
+                padding: 0 1.6em;
+                margin-top: 1.6em;
+            }
+            #composed-thumbs ::content > img{
+                width: 100%;
+
+                border: 1px solid #dddddd;
+                border-radius: 3px;
+                padding: 4px;
+                margin-bottom: 4px;
+                cursor: pointer;
+            }
+        </style>
+        <div class="people-card">
+            <div class="people-heading">
+                <content select="[slot='People/heading']"></content>
+                <div class="people-toolbar__item people-save">
+                    <content select="[slot='People/save']"></content>
+                </div>
+                <div class="people-toolbar__item">
+                    <content select="[slot='Images/add']"></content>
+                </div>
+                <div class="people-toolbar__item">
+                    <content select="[slot='People/cancel']"></content>
+                </div>
+            </div>
+            <div id="composed-thumbs">
+                <content select="[slot='Images/big']"></content>
+                <div style="width: 5em;">
+                    <content select="[slot='Images/thumbnail']"></content>
+                </div>
+            </div>
+            <div class="people-form">
+                <content select="[slot='People/first-name-label']"></content>
+                <content select="[slot='People/first-name-control']"></content>
+                <content select="[slot='People/last-name-label']"></content>
+                <content select="[slot='People/last-name-control']"></content>
+             </div>
+        </div>

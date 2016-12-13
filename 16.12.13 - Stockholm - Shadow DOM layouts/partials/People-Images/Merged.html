@@ -1,0 +1,34 @@
+<template>
+    <h2 slot="People/heading">Person details</h2>
+    <template is="dom-bind">
+        <label slot="People/first-name-label">First name:</label>
+        <input slot="People/first-name-control" type="text" value="{{model.FirstName$::change}}" placeholder="First name"/>
+
+        <label slot="People/last-name-label">Last name:</label>
+        <input slot="People/last-name-control" type="text" value="{{model.LastName$::change}}" placeholder="Last name"/> <button slot="People/save" onclick="++this.value;" value="{{model.Save$::click}}">Save</button> <button slot="People/cancel" onclick="++this.value;" value="{{model.Cancel$::click}}">Cancel</button> <link is="puppet-redirect" history url="{{model.RedirectUrl$}}" />
+        ...
+    </template>
+    <template is="starcounter-composition">
+        ...
+    </template>
+</template>
+<link rel="import" href="/Images/elements/so-juicy-filedrop/so-juicy-filedrop.html" />
+
+<template>
+    <template is="dom-bind">
+        <template is="dom-repeat" items="{{model.Illustrations}}" restamp="true">
+            <img slot="Images/thumbnail" ssrc="{{item.PreviewURL}}" onclick="++this.value;" value="{{item.Select$::click}}"/>
+        </template>
+        <button slot="Images/add" onclick="++this.value;" value="{{model.Add$::click}}" class="btn-carousel-add"
+                style="background-color: #6A6A6A; bbackground-image:url('/images/css/add.png'); background-position:center; background-repeat:no-repeat;">
+            &nbsp;
+        </button>
+        <so-juicy-filedrop slot="Images/big" id="jfFileDrop" session-id="{{model.SessionId}}" upload-url="/images/images" vvalue="{{model.Selected.Content.URL$}}" filetype="{{model.Selected.Content.MimeType$}}" max-file-size="{{model.MaxFileSize}}" allowed-mime-types="{{model.AllowedMimeTypes}}">
+            <div>
+            </div>
+        </so-juicy-filedrop>
+    </template>
+    <template is="starcounter-composition">
+        ...
+    </template>
+</template>

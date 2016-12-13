@@ -1,0 +1,15 @@
+<template>
+    <h2 slot="People/heading">Person details</h2>
+    <template is="dom-bind">
+        <label slot="People/first-name-label">First name:</label>
+        <input slot="People/first-name-control" type="text" value="{{model.FirstName$::change}}" placeholder="First name"/>
+
+        <label slot="People/last-name-label">Last name:</label>
+        <input slot="People/last-name-control" type="text" value="{{model.LastName$::change}}" placeholder="Last name"/>
+
+        <button slot="People/save" onclick="++this.value;" value="{{model.Save$::click}}">Save</button>
+        <button slot="People/cancel" onclick="++this.value;" value="{{model.Cancel$::click}}">Cancel</button>
+
+        <link is="puppet-redirect" history url="{{model.RedirectUrl$}}" />
+    </template>
+</template>

@@ -1,0 +1,28 @@
+<link rel="import" href="/sys/puppet-redirect/puppet-redirect.html" />
+<template>
+  <template is="dom-bind">
+    <style>
+      .people-card{
+        /* ... */
+      }
+    </style>
+    <div class="people-card">
+      <div class="people-heading">
+        <h2 slot="People/heading">Person details</h2>
+        <div class="people-toolbar__item people-save">
+          <button slot="People/save" onclick="++this.value;" value="{{model.Save$::click}}">Save</button>
+        </div>
+        <div class="people-toolbar__item">
+        <button slot="People/cancel" onclick="++this.value;" value="{{model.Cancel$::click}}">Cancel</button>
+        </div>
+      </div>
+      <div class="people-form">
+        <label slot="People/first-name-label">First name:</label>
+        <input slot="People/first-name-control" type="text" value="{{model.FirstName$::change}}" placeholder="First name"/>
+        <label slot="People/last-name-label">Last name:</label>
+        <input slot="People/last-name-control" type="text" value="{{model.LastName$::change}}" placeholder="Last name"/>
+       </div>
+    </div>
+    <link is="puppet-redirect" history url="{{model.RedirectUrl$}}" />
+  </template>
+</template>
