@@ -502,9 +502,10 @@ in JSON viewm model (however they are still plain HTML string) -->
 					<ul>
 						<li>Also HTML code</li>
 						<li>comes as data in JSON view-model</li>
-						<li>With same <strike>constrains</strike> freedom of HTML doc.<br/> <code>&lt;template&gt;</code> with any HTML+CSS structure and <code>&lt;slot&gt;</code>s</li>
+						<li>With same <strike>constrains</strike> freedom of HTML doc.<br/>
+							 <code>DocumentFragment</code> with any HTML+CSS structure and <code>&lt;slot&gt;</code>s</li>
 						<li>could be migrated between instances w/ <img style="width: 1em; height: 1em;" alt="Starcounter" data-natural-width="416" data-natural-height="416" src="images/Starcounter-logo.png"> tools</li>
-						<li>Could be changed byserver-side code</li>
+						<li>Could be changed by server-side code</li>
 
 					</ul>
 					<div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
@@ -542,6 +543,7 @@ When you are runninning dozens of apps combined.
 It makes visual integration between many apps extremely flexible and easy! -->
 					</aside>
 					<h1 class="absolute-center">Rule them all!</h1>
+					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
 					<aside data-markdown class="notes">
@@ -569,13 +571,14 @@ Then we can safely change the layout composition without touching those elements
 					<div class="fragment current-visible hide-invisible " data-fragment-index="3">
 						Replace defaults with:
 					   <pre class="sql hljs"
-				   >SELECT * FROM HTMLComposition WHERE Key = ""</pre>
+				   >SELECT * FROM HTMLComposition
+WHERE Key = "/People/Person.html&amp;/Images/Concept.html"</pre>
 			   		</div>
 				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="4"
 				   ><template is="juicy-code-sample" content="./partials/People-Images/MergedComposition.html" unsafe></template></pre>
 				   <pre class="html hljs fragment current-visible hide-invisible " data-fragment-index="5"
 				   ><template is="juicy-code-sample" content="./partials/People-Images/MergedComposition.html" lowlight="markSlots"></template></pre>
-   					<img src="images/partials/Merged-composed.png" class="fragment hide-invisible" data-fragment-index="6"/>
+   					<img src="images/partials/Merged-composed.png" class="fragment" data-fragment-index="6"/>
 
 				   <div class="overlayed-list fragment" data-fragment-index="10" style="bottom: 0;">
 					   <ul class="good ticks">
@@ -584,16 +587,16 @@ Then we can safely change the layout composition without touching those elements
 						   <li>Layouts are managable as any other data in <img style="width: 1em; height: 1em;" alt="Starcounter" data-natural-width="416" data-natural-height="416" src="images/Starcounter-logo.png"></li>
 					   </ul>
 				   </div>
+				   <footer class="twitter">@tomalecpl</footer>
+			   </section>
+			   <section>
 
-				   <div class="fragment" data-fragment-index="11">
-						<h4>What if there is none?</h4>
-						<p>Use defaults</p>
-<pre>
- No worries, we have plans to improve this step as well.
- Anyway, what's more important we have many means to provide this layout.
-
-</pre>
-					</div>
+					<h3>What if there is none?</h3>
+					<ul>
+						<li>Use defaults</li>
+						<li>Magic is planned</li>
+						<li>You have many ways to provide those, anyway</li>
+					</ul>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
@@ -668,7 +671,8 @@ toghether with Partial's code. -->
 						<li>Styling standalone</li>
 						<li>Provided by app devs</li>
 					</ul>
-					<p>example</p>
+					<pre style="font-size: 50%;" class="html hljs fragment current-visible hide-invisible " data-fragment-index="6"
+					><template is="juicy-code-sample" content="./partials/People/Person.html" lowlight="markComposition"></template></pre>
 					<footer class="twitter">@tomalecpl</footer>
 				</section>
 				<section>
@@ -898,10 +902,10 @@ now
 					<table class="browser-support">
 						<tr>
 							<td rowspan="2">Code editor <br/>w/ dev tools integration</td>
-							<td>in Launcher App</td>
+							<td>in Launcher &amp; Layout App</td>
 						</tr>
 						<tr>
-							<td>as a custom element <a href="https://github.com/Starcounter/starcounter-layout-html-editor"><code>&lt;starcounter-layout-html-editor&gt;</code></a> </td>
+							<td>as a custom element <br/> <a href="https://github.com/Starcounter/starcounter-layout-html-editor"><code>&lt;starcounter-layout-html-editor&gt;</code></a> </td>
 						</tr>
 						<tr>
 							<td>WYSIWYG editor</td>
