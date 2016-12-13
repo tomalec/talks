@@ -388,22 +388,54 @@ Doing any DOM related changes in <code>constructor</code> are strongly discourag
 						<li>Styling Custom Elements</li>
 					</ul>
 					<pre class="html fragment hide-invisible" data-fragment-index="0"><code># my-element's Shadow DOM
-<style>
+&lt;style&gt;
 :host{
   --my-element-title-color: red;
 }
 .title {
   color: var(--my-element-title-color);
 }
-</style>
-<h3 class="title">I'm a .title from Shadow DOM</h3>
+&lt;/style&gt;
+&lt;h3 class="title"&gt;I'm a .title from Shadow DOM&lt;/h3&gt;
 </code></pre>
-					<pre class="html fragment" data-fragment-index="1"><code><style>
+					<pre class="html fragment" data-fragment-index="1"><code>&lt;style&gt;
   .some-class{
     --my-element-title-color: blue;
   }
-</style>
-<my-element class="some-class"></my-element>
+&lt;/style&gt;
+&lt;my-element class="some-class"&gt;&lt;/my-element&gt;
+</code></pre>
+					<footer style="text-align: right;"><a href="http://jsbin.com/xiyezi/3/edit?html,output">jsbin.com/xiyezi/</a></footer>
+					<footer class="twitter">@tomalecpl</footer>
+				</section>
+				<section>
+					<aside data-markdown class="notes">
+					</aside>
+					<h3>CSS <code>@apply</code></h3>
+					<p>A Collection of Interesting Ideas, 18 September 2016</p>
+					<small>Polymer claims WD</small>
+					<p><a href="https://tabatkins.github.io/specs/css-apply-rule/">tabatkins.github.io/specs/css-apply-rule/</a></p>
+					<ul>
+						<li>CSS mixins</li>
+						<li>Styling Custom Elements ♥</li>
+					</ul>
+					<pre class="css fragment hide-invisible" data-fragment-index="0"><code>
+:root,
+.scope,
+my-element{
+  --my-button: {
+	  min-width: 5.14em;
+	  margin: 0 0.29em;
+	  /* any rules */
+	  padding: 0.7em 0.57em;
+	  @apply --shadow-elevation-2dp;
+  };
+}</code></pre>
+					<pre class="css fragment" data-fragment-index="1"><code>
+/* my-element Shadow DOM*/
+.button {
+  @apply --my-button;
+}
 </code></pre>
 					<footer style="text-align: right;"><a href="http://jsbin.com/xiyezi/3/edit?html,output">jsbin.com/xiyezi/</a></footer>
 					<footer class="twitter">@tomalecpl</footer>
