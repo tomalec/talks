@@ -7,8 +7,8 @@
 
 Few news, interesting ideas and migration plans for Web Tech used in Starcounter apps.
 
-## [Slides](http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20Shadow%20DOM%20layouts)
+## [Slides](http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20What's%20new%20in%20Web)
 
-[http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20Shadow%20DOM%20layouts](http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20Shadow%20DOM%20layouts)
+[http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20What's%20new%20in%20Web](http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20What's%20new%20in%20Web)
 
 ## [Video]
