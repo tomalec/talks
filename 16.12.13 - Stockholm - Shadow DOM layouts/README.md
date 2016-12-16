@@ -1,20 +1,31 @@
-# CSS Grid Layout - the only grid framework you need to know
+# Shadow DOM layout compositions
 
-> 2016.03.18 [meet.js Summit 16](http://summit.meetjs.pl/2016/)
+> 2016.12.14 [Starcounter Tech Day 2016](http://starcounter.com/resources-activities-articles-and-knowledge/starcounter-activity/)
+> Stockholm, Sweden
 
 ## Abstract
 
-CSS Grid Layout is the latest W3C spec for, well.. grid layouts.
-
-Finally, it will work on Web Platform level. No more fancy CSS grid frameworks, no more clear fixes, floats, tables and other mess - the CSS as it should be.
-You will see how to create almost any page layout with few lines of clear CSS, without div-soup, and without single byte of library or tool to download. You will learn how to code with ease, and get experience with tomorrow's tech.
-
-## [Slides](http://tomalec.github.io/talks/16.03.19%20-%20Warsaw%20-%20CSS%20Grid%20Layout%20-%20the%20only%20grid%20framework%20you%20need%20to%20know)
-
- :exclamation: CSS Grid support is needed to use the slides: Chrome with [chrome://flags/](chrome://flags/) `enable-experimental-web-platform-features`
-
- Then you are free to go to the [slides](http://tomalec.github.io/talks/16.03.19%20-%20Warsaw%20-%20CSS%20Grid%20Layout%20-%20the%20only%20grid%20framework%20you%20need%20to%20know).
+I hope most of you are already familliar with our cool mapping ideas.
+Now, I would like to tell you more about blending - that's the term we use for
+mixing and aligning Apps' UI elements together within the same browsers window.
 
 
-## [Video](https://youtu.be/8xQWMf0NH_s?list=UU2aX7cPDv8Stij0kBCM_qgg)
- https://youtu.be/8xQWMf0NH_s?list=UU2aX7cPDv8Stij0kBCM_qgg
+Some of you may know what it gives, some of you may not.
+Some of you have already used it, some of you may not even be aware that it's there.
+That's why I would like to make sure we all are more-or-less on the same page.
+We'll all know what benefits it gives, how it works and how to use it to get the best results.
+
+Also I'd like to show you that our solution will not only let you participate in
+entire echosystem of apps and integrate seamlessly, but also that it
+makes development and maintainance of your own apps easier, cleaner and even more modular.
+
+Entire blending applies as well to entire page as as for functional section of pages - which we call "partials".
+So, you can nest blending features as deep as you want.
+
+## [Slides](http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20Shadow%20DOM%20layouts)
+
+ :exclamation: CSS Grid support is needed to use the examples use Chrome or Firefox
+
+[http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20Shadow%20DOM%20layouts](http://tomalec.github.io/talks/16.12.13%20-%20Stockholm%20-%20Shadow%20DOM%20layouts)
+
+## [Video]

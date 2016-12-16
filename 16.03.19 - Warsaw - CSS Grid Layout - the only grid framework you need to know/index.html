@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class=" decks export loaded ua-phantomjs reveal-viewport theme-font-montserrat theme-color-black-orange">
+<html class="light decks export loaded ua-phantomjs reveal-viewport theme-font-montserrat theme-color-black-orange">
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -488,33 +488,6 @@ all we want is..
 				.gridlinecaption.col{
 					left: -0.5em;
 				}
-				.captionedgridline{
- 					color: #FFF;
- 					background: transparent !important;
- 					left: -2em;
- 					width: calc(100% + 4em);
-					position: relative;
-					border-radius: 0;
-					text-align: left;
-					border-color: #FFF !important;
-					border-style: solid !important;
-					border-top-width: 4px !important;
-				}
-
-				html.light{
-					background: white !important;
-				}
-				.light .gridline{
-					border: 4px solid #222 !important;
-				}
-				.light h2,
-				.light h3{
-					color: #222 !important;
-				}
-				.light .gridlinecaption{
-					color: #222 !important;
-				}
-
 
 				.grid.gridcontepts{
 					display: grid !important;
@@ -529,6 +502,29 @@ all we want is..
 				}
 				.grid.gridcontepts > *{
 					margin: 0 !important;
+				}
+
+				html.light{
+					background: white !important;
+				}
+				.light h2,
+				.light h3,
+				.gridlinecaption,
+				.gridline, .gridrow, .gridcol{
+					color: #222 !important;
+				}
+
+				.gridline > div,
+				.gridrow > div,
+				.gridcol > div{
+					border-color: #222 !important;
+					border-radius: 0 !important;
+				}
+				.light .twitter{
+					display: none;
+				}
+				.light .gridarea{
+					background: rgba(180,180,180,1.0) !important;
 				}
 
 			</style>
